@@ -1,0 +1,248 @@
+# File: MagicSquareDD.txt
+# Author: CMPT 145
+# Design Document for A1Q1
+
+
+#############################
+# 3x3 Magic Square Detection 
+# Design Document
+#
+# 1. Application's Purpose:
+#   To determine if a given arrangement of 9 numbers 
+#   is a magic square or not.  
+#   **Note: this program does not try to create a magic square!
+#
+# 2. Magic Square Definition: 
+#   - 3x3 grid  
+#   - contains integers 1 through 9 
+#   - every integer in 1-9 must appear exactly once
+#   - all rows, columns, and diagonals of the grid add up to 15
+#
+#   E.g.  Magic   not Magic
+#         8 1 6     1 9 6
+#         3 5 7     5 3 7
+#         4 9 2     4 8 2
+# 
+# 
+# 3. High level behaviour (main)
+#   Ask for the sequence of numbers ("square")
+#   Check whether it is magic!
+#   Program should display "Yes" if it's magic, "no" otherwise
+#############################
+
+
+############################
+#     Algorithms
+############################
+
+
+############################
+# Algorithm 1: main()
+#   Inputs: nothing
+#   Return: 0
+#
+#   1. Ask for the sequence of numbers ("square")
+#      using function get_square()
+#
+#   2. Check that it is magic by 
+#      calling function check_square()
+#
+#   3. Display "Yes!" if it's magic, "No!" otherwise
+# 
+#   Test cases:
+#   Run the application, and enter these examples:
+#   Negative examples:
+#     1 2 3 4 5 6 7 8 9
+#     1 1 1 1 1 1 1 1 1
+#     5 5 5 5 5 5 5 5 5
+#     8 1 6 3 5 7 4 2 9
+#     18 1 6 3 5 7 4 9 2
+#     8 -1 6 3 5 7 4 9 2
+#     
+#   Positive examples:
+#     8 1 6 3 5 7 4 9 2
+#     8 3 4 1 5 9 6 7 2
+#     2 9 4 7 5 3 6 1 8
+
+
+#############################
+# Algorithm 1.1: get_square()
+#   Inputs: none
+#   Obtains 9 numbers from the console
+#   Return: returns a 3x3 list of lists 
+#
+#   Possible algorithm:
+#   1. Display a friendly prompt 
+#   2. Obtain 9 integers from the console
+#   3. Puts them in a 3x3 list of lists
+
+# Test cases:
+# Note: it's hard to test input functions like this.  
+#
+# inputs : []
+# outputs: 3
+# reason : check that the function returns a list of 3 elements.
+
+
+#############################
+# Algorithm 2: check_square(square)
+#   Inputs: given a 3x3 list of integers
+#   Return: True if the square has all the properties of a magic
+#           square; False otherwise
+#
+#   Possible algorithm:
+#
+#   1. To check the square has all integers 1 ... 9
+#      use function check_range()
+#   2. To check 3 rows of the square sum to 15
+#      use function check_rows()
+#   3. To check 3 columns of the square sum to 15
+#      use function check_columns()
+#   4. To check 2 diagonals of the square sum to 15
+#      use function check_diagonals()
+#   5. If any of the checks above is negative (False), return False
+#
+# 
+#   Test cases:
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,9]]
+# outputs: False
+# reason : all the numbers, but not magic.
+#
+# inputs : [[1,1,1],[1,1,1],[1,1,1]]
+# outputs: False
+# reason : not all the numbers
+#
+# inputs : [[8,1,6],[3,5,7],[4,9,2]]
+# outputs: True
+# reason : Magic!
+
+#############################
+# Algorithm 2.1: check_range(square)
+#   Inputs: given a 3x3 list of integers
+#   Return: True if the square contains all the integers 1 .. 9
+#           False otherwise
+# 
+#   Test cases:
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,9]]
+# outputs: True
+# reason : all 1 .. 9 are here
+#
+# inputs : [[1,1,1],[1,1,1],[1,1,1]]
+# outputs: False
+# reason : only one number appears
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,0]]
+# outputs: False
+# reason : one number out of range
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,1]]
+# outputs: False
+# reason : one number repeated
+
+#############################
+# Algorithm 2.2: check_rows(square)
+#   Inputs: given a 3x3 list of integers
+#   Return: True if all the rows sum to 15
+#           False otherwise
+#
+#   Possible algorithm:
+#
+#  1. check the sum of the values from first row
+#  2. check the sum of the values from second row
+#  3. check the sum of the values from third row
+#  4. if any one of the checks resulted in an incorrect sum, return False
+#     otherwise, return True
+# 
+#   Test cases:
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,9]]
+# outputs: False
+# reason : only middle row sums to 15
+#
+# inputs : [[1,1,1],[1,1,1],[1,1,9]]
+# outputs: False
+# reason : no rows sum to 15
+#
+# inputs : [[5,5,5],[1,5,1],[9,1,1]]
+# outputs: False
+# reason : only first row sums to 15
+#
+# inputs : [[1,1,1],[1,1,1],[5,5,5]]
+# outputs: False
+# reason : only last row sums to 15
+#
+# inputs : [[5,5,5],[5,5,5],[5,5,5]]
+# outputs: True
+# reason : all rows sum to 15
+
+#############################
+# Algorithm 2.3: check_columns(square)
+#   Inputs: given a 3x3 list of integers
+#   Return: True if all the columns sum to 15
+#           False otherwise
+#
+#   Possible algorithm:
+#
+#  1. check the sum of the values from first column
+#  2. check the sum of the values from second column
+#  3. check the sum of the values from third column
+#  4. if any one of the checks resulted in an incorrect sum, return False
+#     otherwise, return True
+# 
+#   Test cases:
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,9]]
+# outputs: False
+# reason : only middle column sums to 15
+#
+# inputs : [[1,1,1],[1,1,1],[1,1,9]]
+# outputs: False
+# reason : no columns sum to 15
+#
+# inputs : [[5,5,5],[1,5,1],[9,1,1]]
+# outputs: False
+# reason : only first column sums to 15
+#
+# inputs : [[1,1,5],[1,1,5],[5,5,5]]
+# outputs: False
+# reason : only last row sums to 15
+#
+# inputs : [[5,5,5],[5,5,5],[5,5,5]]
+# outputs: True
+# reason : all rows sum to 15
+
+#############################
+# Algorithm 2.4: check_diagonals(square)
+#   Inputs: given a 3x3 list of integers
+#   Return: True if all the diagonals sum to 15
+#           False otherwise
+#
+#  1. check the sum of the values from upward diagonal
+#  2. check the sum of the values from downward diagonal
+#  3. if any one of the checks resulted in an incorrect sum, return False
+#     otherwise, return True
+# 
+#   Test cases:
+#
+# inputs : [[1,2,3],[4,5,6],[7,8,9]]
+# outputs: True
+# reason : both diagonals sum to 15
+#
+# inputs : [[1,1,1],[1,5,1],[1,1,9]]
+# outputs: False
+# reason : only down diagonal sums to 15
+#
+# inputs : [[1,1,1],[1,5,1],[9,1,1]]
+# outputs: False
+# reason : only up diagonal sums to 15
+#
+# inputs : [[1,1,1],[1,1,1],[1,1,1]]
+# outputs: False
+# reason : no diagonal sums to 15
+
+#############################
+#  End of Design Document
+#############################
+

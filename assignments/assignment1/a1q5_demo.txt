@@ -1,0 +1,81 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+### Example 1 ###
+
+How many data values?10
+Enter one integer only:1
+Enter one integer only:2
+Enter one integer only:3
+Enter one integer only:4
+Enter one integer only:5
+Enter one integer only:4
+Enter one integer only:3
+Enter one integer only:2
+Enter one integer only:3
+Enter one integer only:4
+
+
+
+ ----------- Histogram ----------------
+
+1 *
+2 **
+3 ***
+4 ***
+5 *
+
+
+
+### Example 2 ###
+
+How many data values?5
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:3
+Enter one integer only:3
+Enter one integer only:6
+
+
+
+ ----------- Histogram ----------------
+
+1 **
+2
+3 **
+4
+5
+6 *
+
+
+
+### Example 3 ###
+
+How many data values?8
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:1
+Enter one integer only:10
+Enter one integer only:10
+
+
+
+ ----------- Histogram ----------------
+
+1 ******
+2
+3
+4
+5
+6
+7
+8
+9
+10 **
+assignment1 $

@@ -1,0 +1,39 @@
+1. (2 marks) Comment on your development strategy. For example, you could address the following issues:
+• In your development, did you follow the waterfall model, or the incremental model?
+• If neither, which was closer to what you did?
+
+I followed something most similar to a waterfall model. I wrote out the Main Program and Main Functions (with tests), implemented the program, then began to test them. Of course I had to jump back and forth some as I discovered the mistakes or improvements to what I wrote for the Main Program and Main Functions.
+
+2. (2 marks) Comment on your design plan. For example, you could address the following issues: • How much time did you spend on your design plan?
+• Do you think you planned your application well enough?
+• Did problems arise that you did not plan for? What kinds of problems (if any)?
+• Were there functions you created that were not in your initial plan?
+
+I spent about an hour on my design plan in total. I think I did plan pretty well. A problem that arose was that the parameters and input/outputs needed to change as I found more logical ways of implementing the interaction between the functions.
+
+I added a helper function that was not planned, its main purpose was to print out the confessions list in an easily readable manner. Other than that, the 3 functions I initially planned were the only functions I needed to create.
+
+
+3. (2 marks) Comment on the implementation stage. For example, you could address the following
+issues:
+• Did you estimate the time you’d need to implement the application?
+• Did the implementation take longer or shorter than you planned for, or expected? • What took more time than you thought?
+• What took less time than you thought?
+
+I first implemented the program using the "find letter that matches first character, then check the letters to the right/left/up/down" method. This took a long time and the code was very complicated. It took me maybe 2.5 hours to complete. This took much longer than I expected. Then I discovered that there was the simpler method of joining each row or column into a string and checking if the word was in the string. This method took me only 30 minutes to implement. What I learned here was to READ the assignment instructions very carefully before starting.
+
+
+4. (2 marks) Comment on your testing. For example, you could address the following issues:
+• Did your test script find errors in your functions?
+• Did you discover errors in your functions during your verification stage (when you were running the completed application)?
+• How long did you spend testing and debugging? If you spent more time than you expected, is there any way you can try to reduce the time?
+
+I did find small bugs during testing. For example, the readline() method was reading in newline characters. Another error I was getting was when my search word was not capitalized, which would result in everything returning false.
+
+I spent a lot of time creating tests. I think I over tested to begin with, but after talking with some classmates, I realized I was being far too thorough and I cut back on some tests. In the future, I think I will better understand the fine line between spending too much time testing and not enough time testing. Having more examples of tests as a guideline would help me spend less time on testing next time.
+
+
+5. (2 marks) Comment on your use of time. For example, you could address the following issues:
+• How much time total did you spend, from start to finish (excluding these reflection questions)? • Was that more or less than you expected? More or less than you planned?
+
+I spent over 7 hours in total. This was much more time than I expected. I thought I could have finished the main program in 30 minutes. But as mentioned above, I first implemented a very complicated algorithm that took over 2 hours. The testing also took much more time than I expected. Creating all these lists and test cases took more time and thinking than I expected. I allotted enough time to finish so I did not need to rush, but I was way overly optimistic to begin with.

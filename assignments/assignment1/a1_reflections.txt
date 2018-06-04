@@ -1,0 +1,77 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+### Question 2 ###
+1. Comment on your program’s correctness. How confident are you that your program (or the functions that you completed) is correct? What new information (in addition to your current level of testing) would raise your confidence? How likely is it that your program might be incorrect in a way you do not currently recognize?
+
+I am fairly confident in my program is correct enough. I have run the program several times with a variety of different 4x4 squares to ensure correctness.
+
+If I could compare my program's output to results that are verified by a third party using a different algorithm (possibly by a mathematician), that would raise my confidence in my program. 
+
+I think it is fairly unlikely that my program may be incorrect in a way I do not currently recognize. The program is fairly straight forward and because I put most of the program into small functions, I can test each function seperately.
+
+
+2. Comment on your program’s efficiency. How confident are you that your program is is reasonably efficient? What facts or concepts did you use to estimate or quantify your program’s efficiency?
+
+My program is reasonably efficient for what it is required to do (process a square of 4x4 elements). The program executes essentially instantly as perceived by a human user which suggests it is efficient enough for our purpose.
+
+3. Comment on your program’s adaptability. For example, what if Assignment 2 asked you to write a program to check whether a 5 × 5 square was latin (using numbers 1,2,3,4,5)? How hard would it be to take your work in A1Q1, and revise it to handle squares of any size?
+
+I ensured adaptability in my program by creating a variable n that represents the desired "order N" of the square. Simply changing the variable n to 5 will allow the program to ask for 5 lines of 5 numbers and check each row and column accordingly for order 5.
+
+4. Comment on your program’s robustness. Can you identify places where your program might behave badly, even though you’ve done your best to make it correct? You do not have to fix anything you mention here; it’s just good to be aware.
+
+My program is fairly robust. It can handle lines that do not have exactly n number of elements. Whether it is more than n numbers or less than n numbers per line. My program hits an error however when there is a string entered. For example, I get a "SyntaxError: unexpected EOF while parsing" when I input the line 1 d 3 4 in the console. The problem seems to be that the input function input does not handle a mix of numbers and strings well without some additional code.
+
+5. How much time did you spend writing your program? Did it take longer or shorter than you expected? If anything surprised you about this task, explain why it surprised you.
+
+The program took me a 3 hours to write. It took me longer than expected. The nested loop to check the vertical lines was tricky. I had to think hard about which variable represented which orientation and when it came to indexing, it was crucial to understand which variable came first. I did a lot of testing and console printing to make sure the loop was checking each variable as required. Implementing adaptability was also a lot more work than I thought it was. A number of different lines of code had to be changed to accommodate the variable n which represented the order N that was desired by the program.
+
+### Question 4 ####
+
+1. Comment on your program’s correctness. How confident are you that your program (or the functions that you completed) is correct? Would it work on extremely large Pascal Triangles, or would it fail due to hard-coding?
+
+I am very confident in my program's correctness. My function checkTriangle() can handle extremely large Pascal Triangles without problem. Nothing is hardcoded in a way that would affect the program if the input Triangle was very large.
+
+
+2. Comment on your program’s efficiency. How confident are you that your program is is reasonably efficient?
+
+I feel that my program is reasonably efficient because the program's purpose is fairly simple, create and check a triangle of order N. The program executes immediately as perceived by a human user. This suggests that it is efficient enough in terms of time.
+
+3. Comment on your program’s reusability. For example, did you re-use any code from a different project (maybe Q1)? How easy would it be to re-use any part of your program for another task?
+
+My program consists primarily of two functions. Both of which are defined as functions that can be easily exported and reused. I could improve reusability by refactoring the code that asks for console input into a function. I did not re-use any code from Q1, but in retrospect, I could have very easily used the getSquare() function from Q1 and maybe renamed it also.
+
+4. Comment on your program’s robustness. Can you identify places where your program might behave badly, even though you’ve done your best to make it correct? You do not have to fix anything you mention here.
+
+My program is fairly robust. I've implemented a loop that will continue to ask for the number of rows in the triangle while n is not an integer that is greater than 1. This saves the program from crashing later when it tries to use a string in place of what should be an integer. 
+
+My program does not handle unexpected inputs well. For example, when asking for numbers for a line in the triangle, if a string character ('a', 'b', 'ab' etc.) is entered, the program crashes due to a Value Error due to the int() function being applied to a string.
+
+My program also does not handle some non-triangle lists well. For example:
+
+[[1]
+[1, 1] 
+[1, 1]
+[1, 2, 3, 4, 1]]
+
+This list of lists will run into an IndexError. Because on the last line, when checking index 3 of the line, it will compare it to the sum of the element at index 3 and 4 on the line above. There is no index 3 and 4 in the line above.
+
+5. (2 marks) How much time did you spend writing your program? Did it take longer or shorter than you expected? If anything surprised you about this task, explain why it surprised you.
+
+The program was surprisingly took me less time than Q1, a little under 3 hours. I attribute this my growing comfort with Python syntax and the checkTriangle() function was straight forward compared to implementing both checkHorizontal() and checkVertical() in Q1. What surprised me was that there were so many little bugs that in aggregate took up a lot of time. Docstring also took a lot of time.
+
+
+## Question 5 ###
+1. Changed function get_data() to return the list data
+2. Removed the data argument from the get_data() function, also removed the parameter from the function call. They were unnecessary for a functioning program.
+3. In get_data(), the user input that is appended to the list data is converted into an integer before appending
+4. In the find_min_and_max() function, added a return statement that returns the_min and the_max variables.
+5. In the counting() function, the_min and the_max variables are set to equal the return from the find_min_and_max() function
+6. Removed the_min and the_max parameters from find_min_and_max() function. Also removed the parameters from the function call. They were unnecessary for a functioning program.
+7. Removed the parameters the_min and the_max from the draw_histogram() function. Also removed the arguments from the function call. They were unnecessary for a functioning program.
+8. In the function draw_histogram(), I added the enumerate() function to the for loop with an index variable.
+9. Changed the for loop to start at index 1 of the frequency list (does not print zero). The histogram now prints the index + 1 instead of the value at that index, followed by the '*'s. The + 1 is necessary because the indexes were shifted back 1 because the list frequency starts at 1.

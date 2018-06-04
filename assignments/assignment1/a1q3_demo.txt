@@ -1,0 +1,83 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+### Example 1 ###
+Please enter the number of rows in the triangle 4
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 2 1
+Please enter the numbers in line 4 separated by a space  1 3 3 1
+yes
+
+### Example 2 ###
+
+Please enter the number of rows in the triangle 6
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 2 1
+Please enter the numbers in line 4 separated by a space  1 3 3 1
+Please enter the numbers in line 5 separated by a space  1 4 6 4 1
+Please enter the numbers in line 6 separated by a space  1 5 10 10 5 1
+yes
+
+### Example 3 ###
+
+Please enter the number of rows in the triangle 10
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 2 1
+Please enter the numbers in line 4 separated by a space  1 3 3 1
+Please enter the numbers in line 5 separated by a space  1 4 6 4 1
+Please enter the numbers in line 6 separated by a space  1 5 10 10 5 1
+Please enter the numbers in line 7 separated by a space  1 6 15 20 15 6 1
+Please enter the numbers in line 8 separated by a space  1 7 21 35 35 21 7 1
+Please enter the numbers in line 9 separated by a space  1 8 28 56 70 56 28 8 1
+Please enter the numbers in line 10 separated by a space 1 9 36 84 126 126 84 36 9 1     ^ yes
+
+### Example 4 ###
+
+Please enter the number of rows in the triangle 4
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 3 1
+Please enter the numbers in line 4 separated by a space  1 4 4 1
+no
+
+### Example 5 ###
+
+Please enter the number of rows in the triangle 5
+Please enter the numbers in line 1 separated by a space  2
+Please enter the numbers in line 2 separated by a space  2 2
+Please enter the numbers in line 3 separated by a space  2 4 2
+Please enter the numbers in line 4 separated by a space  2 6 6 2
+Please enter the numbers in line 5 separated by a space  2 8 12 8 2
+no
+
+### Example 6 ###
+
+Please enter the number of rows in the triangle 5
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 2 1
+Please enter the numbers in line 4 separated by a space  1 3 3 1
+Please enter the numbers in line 5 separated by a space  0 4 6 4 1
+no
+
+
+###Evidence Triangle Results###
+
+Please enter the number of rows in the triangle 7
+Please enter the numbers in line 1 separated by a space  1
+Please enter the numbers in line 2 separated by a space  1 1
+Please enter the numbers in line 3 separated by a space  1 2 1
+Please enter the numbers in line 4 separated by a space  1 3 3 1
+Please enter the numbers in line 5 separated by a space  1 4 6 4 1
+Please enter the numbers in line 6 separated by a space  1 5 10 10 5 1
+Please enter the numbers in line 7 separated by a space  1 6 16 20 16 6 1
+no
+
+The defendant is NOT GUILTY! because the evidence triangle is not a proper
+Pascal Triangle! Pascal would never be so careless!

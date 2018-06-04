@@ -1,0 +1,66 @@
+CMPT 145 Assignment 2 Question 1
+Sudoku Checker Design Document
+
+Main Program
+  * obtain filename from the command-line
+  * open named file
+  * read 9 lines of 9 integers, store in square
+  * call check_all() 
+  * if True, print 'yes' otherwise print 'no'
+
+  ** Test by running on the command-line
+
+check_all(square)
+  Purpose: Check that the square is a sudoku square
+  Pre: square : a list of lists??  numpy array??
+  Post: none
+  Return: True if the square is a sudoku square
+
+  * for each row: check row
+  * for each column: check col
+  * for each block: check block
+  * if any row, column or block does not check out, return False
+
+  ** Test by copy/paste from example files into test script
+
+
+check(group)
+  Purpose: Check that the group contains numbers 1-9 exactly once each
+  Pre: group: a list of integers
+  Post: none
+  Return: True if the group has all 1-9, False otherwise
+
+  * build a list legit = [1 ... 9]
+  * for each item in group, remove item from legit
+  * if legit is empty return True
+  * if legit is not empty, return False
+
+  ** Test cases:
+      inputs:  [1 ... 9]
+      outputs: True
+      reason:  Good, in order
+
+      inputs:  [1 ... 1]
+      outputs: False
+      reason:  All same
+
+      inputs:  [1 ... 9] (random order)
+      outputs: True
+      reason:  Good, in random order
+
+      inputs:  [9 ... 1]
+      outputs: True
+      reason:  Good, in reverse order
+
+      inputs:  [1 .. 9] (repeat number)
+      outputs: False
+      reason:  Bad, repeat number
+
+      inputs:  [1 .. 9] (use a negative)
+      outputs: False
+      reason:  Bad, value out of range
+
+      inputs:  [1 ... 9] (value too big)
+      outputs: False
+      reason:  Bad, value out of range
+
