@@ -75,6 +75,7 @@ for t in test_add:
               ' but found ', thing['count'], '--', t['reason'])
 
     # check the ave
+    # changed the if statment to an abs difference calculation
     if abs(thing['avg'] - expected[1]) > 0.00001:
         print('Error in add(): expected avg', expected[1],
               ' but found ', thing['avg'], '--', t['reason'])
@@ -88,8 +89,19 @@ test_mean = [
     {'inputs' : [0,0,0,0,0],    # data values to be added
      'outputs':[5, 0],          #[count, avg]
      'reason' : 'All zeroes'},
-
     # TODO Add more test cases
+    {'inputs' : [10,5,8,2,8],    # data values to be added
+     'outputs':[5, 6.6],          #[count, avg]
+     'reason' : 'All positive integers'},
+    {'inputs' : [-10,-5,-8,-2,-8],    # data values to be added
+     'outputs':[5, -6.6],          #[count, avg]
+     'reason' : 'All negative integers'},
+    {'inputs' : [10.01, 5.55, 8.222, 2.90, 8.8],    # data values to be added
+     'outputs':[5, 7.096399],          #[count, avg]
+     'reason' : 'All positive floats'},
+    {'inputs' : [-10.01, -5.55, -8.222, -2.90, -8.8],    # data values to be added
+     'outputs':[5, -7.096399],          #[count, avg]
+     'reason' : 'All negative floats'},
 ]
 
 for t in test_mean:
@@ -112,12 +124,14 @@ for t in test_mean:
               ' but found ', thing['count'], '--', t['reason'])
 
     # check the ave
-    if thing['avg'] != expected[1]:
+    # changed the if statment to an abs difference calculation
+    if abs(thing['avg'] - expected[1]) > 0.00001:
         print('Error in add(): expected avg', expected[1],
               ' but found ', thing['avg'], '--', t['reason'])
 
     # check the result of mean()
-    if result != expected[1]:
+    # changed the if statment to an abs difference calculation
+    if abs(result - expected[1]) > 0.00001:
         print('Error in mean(): expected avg', expected[1],
               ' but found ', result, '--', t['reason'])
 
