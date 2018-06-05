@@ -138,4 +138,40 @@ for t in test_mean:
         print('Error in mean(): expected avg', expected[1],
               ' but found ', result, '--', t['reason'])
 
+#####################################################################
+# test Statistics.count()
+
+test_count = [
+    {'inputs' : [],    # data values to be added
+     'outputs':[0, 0],          #[count, avg]
+     'reason' : 'no values added'},
+    {'inputs' : [10],    # data values to be added
+     'outputs':[1, 10],          #[count, avg]
+     'reason' : 'One value added'},
+    {'inputs' : [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],    # data values to be added
+     'outputs':[10, 5],          #[count, avg]
+     'reason' : '10 values added'},
+]
+
+for t in test_count:
+    args_in = t['inputs']
+    expected = t['outputs']
+
+    # create the Statistics data structure
+    thing = Stat.create()
+    # add the give values to the
+    for val in args_in:
+        Stat.add(thing, val)
+
+    # now call count()
+    result = Stat.count(thing)
+
+    # we'll open the data structure in these tests
+    # check the count
+    if result != expected[0]:
+        print('Error in count(): expected count', expected[0],
+              ' but found ', result, '--', t['reason'])
+
+
+
 print('*** Test script completed ***')
