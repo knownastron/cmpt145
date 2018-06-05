@@ -8,9 +8,9 @@
 #   'count':     the number of data values added
 #   'avg':       the running average of the values added
 #
-# These values can be modified every time a new data value is 
-# added, so that the mean and variance can be calculated quickly  
-# as needed.  This approach means that we do not need to store  
+# These values can be modified every time a new data value is
+# added, so that the mean and variance can be calculated quickly
+# as needed.  This approach means that we do not need to store
 # the data values themselves, which could save a lot of space.
 
 #####################################################################
@@ -70,4 +70,17 @@ def mean(stat):
     return stat['avg']
 
 
-
+def count(stat):
+    """
+    Purpose:
+        Return the count of all the values seen so far.
+    Pre-conditions:
+        stat: the Statistics record
+    Post-conditions:
+        (none)
+    Return:
+        The count of the data seen so far.
+        Note: if no data has been seen, 0 is returned.
+              This is clearly false.
+    """
+    return stat['count']
