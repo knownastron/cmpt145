@@ -102,6 +102,9 @@ test_mean = [
     {'inputs' : [-10.01, -5.55, -8.222, -2.90, -8.8],    # data values to be added
      'outputs':[5, -7.096399],          #[count, avg]
      'reason' : 'All negative floats'},
+    {'inputs' : [-10.01, 5, -8.222, 2.90, -8],    # data values to be added
+     'outputs':[5, -3.6664],          #[count, avg]
+     'reason' : 'Mixed positive and negative, floats and integers'},
 ]
 
 for t in test_mean:
