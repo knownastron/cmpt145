@@ -44,6 +44,18 @@ test_add = [
      'outputs':[1, 0], # [count, avg]
      'reason' : 'No change to avg'},
     # TODO Add more test cases
+    {'inputs' : [5],    # single value to be added
+     'outputs':[1, 5], # [count, avg]
+     'reason' : 'Positive integer change to avg'},
+    {'inputs' : [-5],    # single value to be added
+     'outputs':[1, -5], # [count, avg]
+     'reason' : 'Negative integer change to avg'},
+    {'inputs' : [5.55],    # single value to be added
+     'outputs':[1, 5.55], # [count, avg]
+     'reason' : 'Positive float change to avg'},
+    {'inputs' : [-5.55],    # single value to be added
+     'outputs':[1, -5.55], # [count, avg]
+     'reason' : 'Negative float change to avg'},
 ]
 
 for t in test_add:
@@ -63,7 +75,7 @@ for t in test_add:
               ' but found ', thing['count'], '--', t['reason'])
 
     # check the ave
-    if thing['avg'] != expected[1]:
+    if abs(thing['avg'] - expected[1]) > 0.00001:
         print('Error in add(): expected avg', expected[1],
               ' but found ', thing['avg'], '--', t['reason'])
 
