@@ -33,6 +33,8 @@ def create():
     b = {}
     b['count'] = 0      # how many data values have been seen
     b['avg'] = 0        # the running average so far
+    b['max'] = None
+    b['min'] = None
     return b
 
 
@@ -52,6 +54,15 @@ def add(stat, value):
     k = stat['count']           # convenience
     diff = value - stat['avg']  # convenience
     stat['avg'] += diff/k
+
+    #set max and/or min
+    if stat['max'] == None and stat['min'] == None:
+        stat['max'] = value
+        stat['min'] = value
+    elif value > stat['max']:
+        stat['max'] = value
+    elif value < stat['min']:
+        stat['min'] = value
 
 
 def mean(stat):
