@@ -1,3 +1,9 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 # CMPT 145: Abstract Data Types
 # Defines the Statistics ADT
 # Calculate mean and variance.
@@ -95,3 +101,33 @@ def count(stat):
               This is clearly false.
     """
     return stat['count']
+
+def minimum(stat):
+    """
+    Purpose:
+        Return the minimum value of all the values seen so far.
+    Pre-conditions:
+        stat: the Statistics record
+    Post-conditions:
+        (none)
+    Return:
+        The minimum value of the data seen so far.
+        Note: if no data has been seen, None is returned.
+              This is clearly false.
+    """
+    return stat['min']
+
+def maximum(stat):
+    """
+    Purpose:
+        Return the maximum value of all the values seen so far.
+    Pre-conditions:
+        stat: the Statistics record
+    Post-conditions:
+        (none)
+    Return:
+        The maximum value of the data seen so far.
+        Note: if no data has been seen, None is returned.
+              This is clearly false.
+    """
+    return stat['max']
