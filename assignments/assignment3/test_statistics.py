@@ -1,3 +1,10 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+
 # Assignment 3: ADTs and Testing
 
 # This script is a starter file for testing the Statistics ADT
@@ -11,7 +18,7 @@ import Statistics as Stat
 
 test_create = [
     {'inputs' : [],
-     'outputs':[0, 0],
+     'outputs':[0, 0, None, None], #[count, avg, min, max]
      'reason' : 'Checking initial values'},
 ]
 
@@ -33,6 +40,14 @@ for t in test_create:
         print('Error in create(): expected avg', expected[1],
               ' but found ', thing['avg'], '--', t['reason'])
 
+    # q2 test: check the min and max values
+    if thing['min'] != expected[2]:
+        print('Error in create(): expected min', expected[2],
+              ' but found ', thing['min'], '--', t['reason'])
+
+    if thing['max'] != expected[2]:
+        print('Error in create(): expected max', expected[3],
+              ' but found ', thing['max'], '--', t['reason'])
 
 
 #####################################################################
@@ -41,20 +56,20 @@ for t in test_create:
 
 test_add = [
     {'inputs' : [0],    # single value to be added
-     'outputs':[1, 0], # [count, avg]
+     'outputs':[1, 0, 0, 0], # [count, avg, min, max]
      'reason' : 'No change to avg'},
-    # TODO Add more test cases
+    # q1 test cases:
     {'inputs' : [5],    # single value to be added
-     'outputs':[1, 5], # [count, avg]
+     'outputs':[1, 5, 5, 5], # [count, avg, min, max]
      'reason' : 'Positive integer change to avg'},
     {'inputs' : [-5],    # single value to be added
-     'outputs':[1, -5], # [count, avg]
+     'outputs':[1, -5, -5, -5], # [count, avg, min, max]
      'reason' : 'Negative integer change to avg'},
     {'inputs' : [5.55],    # single value to be added
-     'outputs':[1, 5.55], # [count, avg]
+     'outputs':[1, 5.55, 5.55, 5.55], # [count, avg, min, max]
      'reason' : 'Positive float change to avg'},
     {'inputs' : [-5.55],    # single value to be added
-     'outputs':[1, -5.55], # [count, avg]
+     'outputs':[1, -5.55, -5.55, -5.55], # [count, avg, min, max]
      'reason' : 'Negative float change to avg'},
 ]
 
@@ -80,6 +95,14 @@ for t in test_add:
         print('Error in add(): expected avg', expected[1],
               ' but found ', thing['avg'], '--', t['reason'])
 
+    #q2 tests: check the min and max values
+    if abs(thing['min'] - expected[2]) > 0.00001:
+        print('Error in add(): expected min', expected[2],
+              ' but found ', thing['min'], '--', t['reason'])
+
+    if abs(thing['max'] - expected[3]) > 0.00001:
+        print('Error in add(): expected max', expected[2],
+              ' but found ', thing['max'], '--', t['reason'])
 
 
 #####################################################################
