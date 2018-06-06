@@ -32,6 +32,19 @@ def create():
 
 
 def deal(num_cards, num_players, deck):
+    """
+    Purpose:
+        Deal num_cards cards to num_player players from deck
+    Pre-conditions:
+        :param num_cards: an integer for the number of cards per player
+        :param num_players: an integer for each player to be dealt cards
+        :param deck: A deck of cards to be dealt from
+    Post-conditions:
+        deck has all cards that are dealt removed
+    Return:
+        A list of lists of cards that each player was dealt
+    """
+
     cards_dealt = []
 
     for player in range(num_players):
@@ -53,9 +66,56 @@ def deal(num_cards, num_players, deck):
 
     return cards_dealt
 
-my_deck = create()
-deal_hands = deal(5, 8, my_deck)
-for i in deal_hands:
-    print(i)
+def value(card):
+    """
+    Purpose:
+        get the value of a card
+    Pre-conditions:
+        :param card: a card
+    Post-conditions:
+        (none)
+    Return:
+        An integer value representing the value of the card
+    """
 
-print(my_deck)
+    letters = ['A', 'J', 'Q', 'K']
+    first_char = card[0]
+
+
+    if first_char in letters: #check that first char is A, J, Q, or K
+        if first_char == letters[0]:
+            return 1
+        elif first_char == letters[1]:
+            return 11
+        elif first_char == letters[2]:
+            return 12
+        elif first_char == letters[3]:
+            return 13
+    elif len(card) == 3: #if len(card) is 3 then the card is a 10
+        return 10
+    else: #return the value of the first character
+        return int(first_char)
+
+#
+# my_deck = create()
+# deck1 = []
+# deck2 = []
+# deck3 = []
+# deck4 = []
+# for k in range(13):
+#     deck1.append(my_deck[k])
+# for k in range(13,26):
+#     deck2.append(my_deck[k])
+# for k in range(26, 39):
+#     deck3.append(my_deck[k])
+# for k in range(39,52):
+#     deck4.append(my_deck[k])
+# print(deck1)
+# print(deck2)
+# print(deck3)
+# print(deck4)
+# deal_hands = deal(11, 5, my_deck)
+# for i in deal_hands:
+#     print(i)
+#
+# print(my_deck)
