@@ -166,14 +166,29 @@ for t in test_mean:
 
 test_count = [
     {'inputs' : [],    # data values to be added
-     'outputs':[0, 0],          #[count, avg]
+     'outputs':[0],          #[count]
      'reason' : 'no values added'},
     {'inputs' : [10],    # data values to be added
-     'outputs':[1, 10],          #[count, avg]
+     'outputs':[1],          #[count]
      'reason' : 'One value added'},
-    {'inputs' : [5, 5, 5, 5, 5, 5, 5, 5, 5, 5],    # data values to be added
-     'outputs':[10, 5],          #[count, avg]
-     'reason' : '10 values added'},
+    {'inputs' : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 integer values added - ascending order'},
+    {'inputs' : [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 integer values added - descending order'},
+    {'inputs' : [1, 8, 9, 4, 5, 2, 3, 10, 6, 7],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 integer values added - mixed order'},
+    {'inputs' : [1.0, 2.6, 3.42, 4.84, 5.1, 6.555, 7.0, 8.0, 9.8484, 10.5],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 float values added - ascending order'},
+    {'inputs' : [10.5, 9.8484, 8.0, 7.0, 6.555, 5.1, 4.84, 3.42, 2.6, 1],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 float values added - descending order'},
+    {'inputs' : [1.0, 8, 9.8484, 4.84, 5.1, 2.6, 3.42, 10.5, 6.555, 7],    # data values to be added
+     'outputs':[10],          #[count]
+     'reason' : '10 float values added - mixed order'},
 ]
 
 for t in test_count:
@@ -195,6 +210,67 @@ for t in test_count:
         print('Error in count(): expected count', expected[0],
               ' but found ', result, '--', t['reason'])
 
+#####################################################################
+# test Statistics.minimum() and Statistic.maximum()
 
+test_min_max = [
+    {'inputs' : [],    # data values to be added
+     'outputs':[None, None],          #[min, max]
+     'reason' : 'no values added'},
+    {'inputs' : [10],    # data values to be added
+     'outputs':[10, 10],          #[min, max]
+     'reason' : 'One value added'},
+    {'inputs' : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],    # data values to be added
+     'outputs':[1, 10],          #[min, max]
+     'reason' : '10 integer values added - ascending order'},
+    {'inputs' : [10, 9, 8, 7, 6, 5, 4, 3, 2, 1],    # data values to be added
+     'outputs':[1, 10],          #[min, max]
+     'reason' : '10 integer values added - descending order'},
+    {'inputs' : [1, 8, 9, 4, 5, 2, 3, 10, 6, 7],    # data values to be added
+     'outputs':[1, 10],          #[min, max]
+     'reason' : '10 integer values added - mixed order'},
+    {'inputs' : [1.0, 2.6, 3.42, 4.84, 5.1, 6.555, 7.0, 8.0, 9.8484, 10.5],    # data values to be added
+     'outputs': [1.0, 10.5],          #[count]
+     'reason' : '10 float values added - ascending order'},
+    {'inputs' : [10.5, 9.8484, 8.0, 7.0, 6.555, 5.1, 4.84, 3.42, 2.6, 1.0],    # data values to be added
+     'outputs': [1.0, 10.5],          #[count]
+     'reason' : '10 float values added - descending order'},
+    {'inputs' : [1.0, 8, 9.8484, 4.84, 5.1, 2.6, 3.42, 10.5, 6.555, 7],    # data values to be added
+     'outputs': [1.0, 10.5],          #[count]
+     'reason' : '10 float values added - mixed order'},
+]
+
+for t in test_min_max:
+    args_in = t['inputs']
+    expected = t['outputs']
+
+    # create the Statistics data structure
+    thing = Stat.create()
+    # add the give values to the
+    for val in args_in:
+        Stat.add(thing, val)
+
+    # now call min() and max()
+    min_result = Stat.minimum(thing)
+    max_result = Stat.maximum(thing)
+
+    # we'll open the data structure in these tests
+    # check the min
+    if min_result == None:
+        if min_result != expected[0]:
+            print('Error in minimum(): expected minimum', expected[0],
+                  ' but found ', result, '--', t['reason'])
+    elif abs(min_result - expected[0]) > 0.00001:
+        print('Error in minimum(): expected minimum', expected[0],
+              ' but found ', result, '--', t['reason'])
+
+    # check the max
+    if max_result == None:
+        if max_result != expected[1]:
+            print('Error in minimum(): expected maximum', expected[1],
+                  ' but found ', result, '--', t['reason'])
+    elif abs(max_result - expected[1]) > 0.00001:
+        print('Error in maximum(): expected maximum', expected[1],
+              ' but found ', result, '--', t['reason'])
 
 print('*** Test script completed ***')
