@@ -96,6 +96,47 @@ def value(card):
     else: #return the value of the first character
         return int(first_char)
 
+
+def maximum(list_of_cards):
+    """
+    Purpose:
+        get the card with the highest value
+    Pre-conditions:
+        :param card: a list of cards
+    Post-conditions:
+        (none)
+    Return:
+        the card with the highest value
+    """
+
+    cur_max = list_of_cards[0]
+
+    for card in list_of_cards[1:]:
+        if value(card) > value(cur_max):
+            cur_max = card
+
+    return cur_max
+
+def maximum(list_of_cards):
+    """
+    Purpose:
+        get the card with the lowest value
+    Pre-conditions:
+        :param card: a list of cards
+    Post-conditions:
+        (none)
+    Return:
+        the card with the lowest value
+    """
+
+    cur_min = list_of_cards[0]
+
+    for card in list_of_cards[1:]:
+        if value(card) < value(cur_min):
+            cur_min = card
+
+    return cur_min
+
 #
 # my_deck = create()
 # deck1 = []
