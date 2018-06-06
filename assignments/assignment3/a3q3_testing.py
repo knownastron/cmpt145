@@ -14,8 +14,15 @@ import a3q3 as Card
 
 test_create = [
     {'inputs' : [],
-     'outputs':['AH', 'KC' , '4S', 'JC', '8D', 'yas'], #[first, last, random, random, random]
-     'reason' : 'Check first & last value and 3 arbitrarily chosen values'},
+     'outputs':['AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H',
+                'JH', 'QH', 'KH',
+                'AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D',
+                'JD', 'QD', 'KD',
+                'AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S',
+                'JS', 'QS', 'KS',
+                'AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C',
+                'JC', 'QC', 'KC',],
+     'reason' : 'comprehensive testing - every card should appear in deck'},
 ]
 
 for t in test_create:
@@ -25,9 +32,77 @@ for t in test_create:
 #create the Card data structure
 thing = Card.create()
 
-for output in expected:
-    if output not in thing:
-        print('Error in create(): expected card', expected[2],
+for card in expected:
+    if card not in thing:
+        print('Error in create(): expected card', card,
               'did not appear in deck', '--', t['reason'])
+
+
+#####################################################################
+# test Statistics.create()
+#Integration testing
+
+
+test_deal = [
+    {'inputs' : [0, 0], #[num_cards, num_players]
+     'outputs': [0, 0, 52], #[hands dealt, cards per hand, cards remaining in deck]
+     'reason' : 'Zero num_cards and zero num_players - boundary testing'},
+    {'inputs' : [1, 1], #[num_cards, num_players]
+     'outputs': [1, 1, 51], #[hands dealt, cards per hand, cards remaining in deck]
+     'reason' : '1 num_cards and 1 num_players - boundary testing'},
+    {'inputs' : [6, 5], #[num_cards, num_players]
+     'outputs': [5, 6, 22], #[hands dealt, cards per hand, cards remaining in deck]
+     'reason' : '6 num_cards and 5 num_players - typical case'},
+    {'inputs' : [13, 4], #[num_cards, num_players]
+     'outputs': [4, 13, 0], #[hands dealt, cards per hand, cards remaining in deck]
+     'reason' : 'entire deck is dealt_hand'},
+    {'inputs' : [11, 5], #[num_cards, num_players]
+     'outputs': [5, 8, 0], #[hands dealt, cards in *last* hand, cards remaining in deck]
+     'reason' : 'deck runs out of cards before all players dealt all cards'},
+
+]
+
+for t in test_deal:
+    args_in = t['inputs']
+    expected = t['outputs']
+
+    #create the Card data structure
+    thing = Card.create()
+
+    #call Card.deal()
+    dealt_hand = Card.deal(args_in[0], args_in[1], thing)
+
+    #check if deck runs out of cards before all players dealt all cards
+    if args_in[0] * args_in[1] > 52:
+        #check that the last hand has the correct number of cards
+        last_hand = dealt_hand[len(dealt_hand)-1]
+        if len(last_hand) != expected[1]:
+            print('Error in deal(): expected', expected[1], 'in the last hand but',
+                  'found', len(last_hand), 'cards in the last hand', '--', t['reason'])
+
+        #check that deck has the correct number of cards remaining
+        if len(thing) != expected[2]:
+            print('Error in deal(): expected', expected[1],
+                  'cards remaining in deck but found', len(thing),
+                  'cards remaining in deck', '--', t['reason'])
+    else:
+        #check that the number of hands dealt is correct
+        if len(dealt_hand) != expected[0]:
+            print('Error in deal(): expected', expected[1], 'hands dealt but found',
+                  len(dealt_hand), 'hands dealt', '--', t['reason'])
+
+        #check that each hand has the correct number of cards
+        for hand in dealt_hand:
+            if len(hand) != expected[1]:
+                print('Error in deal(): expected', expected[1],
+                      'cards in hand but found', len(hand),
+                      'cards in hand', '--', t['reason'])
+
+        #check that deck has the correct number of cards remaining
+        if len(thing) != expected[2]:
+            print('Error in deal(): expected', expected[2],
+                  'cards remaining in deck but found', len(thing),
+                  'cards remaining in deck', '--', t['reason'])
+
 
 print('*** Test script completed ***')
