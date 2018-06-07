@@ -40,7 +40,7 @@ for card in expected:
 
 #####################################################################
 # test Card.deal()
-#Integration testing
+# Integration testing
 
 
 test_deal = [
@@ -106,19 +106,12 @@ for t in test_deal:
 
 #####################################################################
 # test Card.value()
-#Integration testing
+# Integration testing
 
 
 test_value = [
-    {'inputs' :['AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H',
-                'JH', 'QH', 'KH',
-                'AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D',
-                'JD', 'QD', 'KD',
-                'AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S',
-                'JS', 'QS', 'KS',
-                'AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C',
-                'JC', 'QC', 'KC',],
-     'outputs': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], #[hands dealt, cards per hand, cards remaining in deck]
+    {'inputs' :[], #empty because new deck is created in test
+     'outputs': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], #[values to be returned]
      'reason' : 'comprehensive testing, all cards in deck are tested'},
 ]
 
@@ -129,9 +122,43 @@ for t in test_value:
     #create the Card data structure
     thing = Card.create()
 
+    #check if the value of each card in thing is correct
     for index, card in enumerate(thing):
         if Card.value(card) != expected[index % 13]:
             print('Error in Card.value(), expected', expected[index % 13],
             'but got', Card.value(card))
+
+
+#####################################################################
+# test Card.maximum() and Card.minimum()
+# Integration testing
+
+
+test_min_max = [
+    {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
+     'outputs': [1, 13], #[min value, max value]
+     'reason' : 'Decending deck with duplicate max value'},
+    {'inputs' :['QD', 'JS', '7C', '4D', '3S', 'AS', 'AH'], #a deck of cards
+     'outputs': [1, 12], #[min, max]
+     'reason' : 'Ascending deck with duplicate min value'},
+    {'inputs' :['9S', '10S', '2C', 'JH', '3D', '2H', '9H', '5D'], #a deck of cards
+     'outputs': [2, 11], #[min value, max value]
+     'reason' : 'Mixed order deck'},
+]
+
+for t in test_min_max:
+    args_in = t['inputs']
+    expected = t['outputs']
+
+    min = Card.minimum(args_in)
+    max = Card.maximum(args_in)
+
+    if Card.value(min) != expected[0]:
+        print('Error in Card.minimum(), expected', expected[0],
+              'but got', Card.value(min))
+
+    if Card.value(max) != expected[1]:
+        print('Error in Card.value(), expected', expected[1],
+              'but got', Card.value(max))
 
 print('*** Test script completed ***')
