@@ -138,6 +138,28 @@ def minimum(list_of_cards):
 
     return cur_min
 
+def average(list_of_cards):
+    """
+    Purpose:
+        Get the average value of the cards in the deck
+    Pre-conditions:
+        :param card: a list of cards
+    Post-conditions:
+        (none)
+    Return:
+        a float representing the average value in the deck of cards
+    """
+
+    num_cards = len(list_of_cards)
+    total_value = 0
+
+    for card in list_of_cards:
+        total_value += value(card)
+
+    return total_value/num_cards
+
+
+
 #
 # my_deck = create()
 # deck1 = []
