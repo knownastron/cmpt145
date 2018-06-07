@@ -57,14 +57,14 @@ def deal(num_cards, num_players, deck):
                 return cards_dealt
 
             card_index = rand.randint(0, len(deck)-1) #choose random index
-            cur_card = deck[card_index] #select card at index
-            deck.remove(cur_card) #remove selected card from deck
+            cur_card = deck.pop(card_index) #select card at index
             cur_player_hand.append(cur_card) #add to the current hand
 
         #add the hand of this player to the output list
         cards_dealt.append(cur_player_hand)
 
     return cards_dealt
+
 
 def value(card):
     """
@@ -117,7 +117,8 @@ def maximum(list_of_cards):
 
     return cur_max
 
-def maximum(list_of_cards):
+
+def minimum(list_of_cards):
     """
     Purpose:
         get the card with the lowest value
