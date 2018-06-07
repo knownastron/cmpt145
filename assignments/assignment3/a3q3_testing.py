@@ -150,15 +150,46 @@ for t in test_min_max:
     args_in = t['inputs']
     expected = t['outputs']
 
+    #get the min and the max of each card
     min = Card.minimum(args_in)
     max = Card.maximum(args_in)
 
+    #check if value of min card is equal expected value
     if Card.value(min) != expected[0]:
         print('Error in Card.minimum(), expected', expected[0],
               'but got', Card.value(min))
 
+    #check if value of max card is equal expected value
     if Card.value(max) != expected[1]:
         print('Error in Card.value(), expected', expected[1],
               'but got', Card.value(max))
+
+
+#####################################################################
+# test Card.average()
+# Integration testing
+
+
+test_average = [
+    {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
+     'outputs': [7.166667], #[average]
+     'reason' : 'Decending deck with duplicate max value'},
+    {'inputs' :['QD', 'JS', '7C', '4D', '3S', 'AS', 'AH'], #a deck of cards
+     'outputs': [5.571428], #[average]
+     'reason' : 'Ascending deck with duplicate min value'},
+    {'inputs' :['9S', '10S', '2C', 'JH', '3D', '2H', '9H', '5D'], #a deck of cards
+     'outputs': [6.375], #[average]
+     'reason' : 'Mixed order deck'},
+]
+
+for t in test_average:
+    args_in = t['inputs']
+    expected = t['outputs']
+
+    average = Card.average(args_in)
+
+    if abs(average - expected[0]) > 0.00001:
+        print('Error in Card.average(), expected', expected[0],
+              'but got', average)
 
 print('*** Test script completed ***')
