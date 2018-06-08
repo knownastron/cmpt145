@@ -135,6 +135,12 @@ for t in test_value:
 
 
 test_min_max = [
+    {'inputs' :[], #a deck of cards
+     'outputs': [0, 0], #[min value, max value]
+     'reason' : 'Empty hand'},
+    {'inputs' :['AH'], #a deck of cards
+     'outputs': [1, 1], #[min value, max value]
+     'reason' : 'Exactly one card'},
     {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
      'outputs': [1, 13], #[min value, max value]
      'reason' : 'Decending deck with duplicate max value'},
@@ -186,7 +192,9 @@ for t in test_average:
     args_in = t['inputs']
     expected = t['outputs']
 
+    #get average
     average = Card.average(args_in)
+
 
     if abs(average - expected[0]) > 0.00001:
         print('Error in Card.average(), expected', expected[0],
