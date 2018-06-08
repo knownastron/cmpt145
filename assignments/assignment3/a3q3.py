@@ -78,23 +78,26 @@ def value(card):
         An integer value representing the value of the card
     """
 
-    letters = ['A', 'J', 'Q', 'K']
-    first_char = card[0]
+    if card == 0:
+        return 0
+    else:
+        letters = ['A', 'J', 'Q', 'K']
+        first_char = card[0]
 
 
-    if first_char in letters: #check that first char is A, J, Q, or K
-        if first_char == letters[0]:
-            return 1
-        elif first_char == letters[1]:
-            return 11
-        elif first_char == letters[2]:
-            return 12
-        elif first_char == letters[3]:
-            return 13
-    elif len(card) == 3: #if len(card) is 3 then the card is a 10
-        return 10
-    else: #return the value of the first character
-        return int(first_char)
+        if first_char in letters: #check that first char is A, J, Q, or K
+            if first_char == letters[0]:
+                return 1
+            elif first_char == letters[1]:
+                return 11
+            elif first_char == letters[2]:
+                return 12
+            elif first_char == letters[3]:
+                return 13
+        elif len(card) == 3: #if len(card) is 3 then the card is a 10
+            return 10
+        else: #return the value of the first character
+            return int(first_char)
 
 
 def maximum(list_of_cards):
