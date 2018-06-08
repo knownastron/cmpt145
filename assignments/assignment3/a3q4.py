@@ -47,3 +47,8 @@ for game in range(games):
 
     #adds win to the scoreboard
     score_board[str(cur_max_index)] += 1
+
+#Prints out the final score
+print('---SCOREBOARD---')
+for key in score_board:
+    print('Player', key, 'won a total of', score_board[key], 'games')
