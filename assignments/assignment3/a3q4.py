@@ -15,6 +15,19 @@ players = int(sys.argv[2])
 cards = int(sys.argv[3])
 
 def play_game(games, players, cards):
+        """
+        Purpose:
+            Plays a card game a number of times with the desired number of
+            players and cards. Prints out the result
+        Pre-conditions:
+            :param games: integer for desired number of games to play
+            :param players: integer for desired number of players
+            :param cards: integer for desired number of cards per player
+        Post-conditions:
+            (none)
+        Return:
+            (none)
+        """
     #score_board keeps track of wins per player
     score_board = {}
     for i in range(players):
@@ -51,10 +64,11 @@ def play_game(games, players, cards):
     for key in score_board:
         print('Player', key, 'won a total of', score_board[key], 'games')
 
+#check if more cards are required than necessary to play
 if players * cards > 52:
     print('There are not enough cards for', players, 'players to be dealt',
            cards, 'cards each. Please retry with different number of' +
-           ' players and/or cards')
+           ' players and/or cards.')
 else:
     print('Running', games, 'games with', players, 'players drawing', cards,
     'cards each')
