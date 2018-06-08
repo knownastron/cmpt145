@@ -177,6 +177,12 @@ for t in test_min_max:
 
 
 test_average = [
+    {'inputs' :[], #a deck of cards
+     'outputs': [0], #[average]
+     'reason' : 'Empty list'},
+    {'inputs' :['3D'], #a deck of cards
+     'outputs': [3], #[average]
+     'reason' : 'Empty list'},
     {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
      'outputs': [7.166667], #[average]
      'reason' : 'Decending deck with duplicate max value'},
