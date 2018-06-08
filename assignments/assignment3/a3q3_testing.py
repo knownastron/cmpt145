@@ -110,7 +110,17 @@ for t in test_deal:
 
 
 test_value = [
-    {'inputs' :[], #empty because new deck is created in test
+    {'inputs' :[0],
+     'outputs': [0], #[values to be returned]
+     'reason' : '0 is sometimes passed to value() by minimum() or maximim()'},
+    {'inputs' :['AH', '2H', '3H', '4H', '5H', '6H', '7H', '8H', '9H', '10H',
+               'JH', 'QH', 'KH',
+               'AD', '2D', '3D', '4D', '5D', '6D', '7D', '8D', '9D', '10D',
+               'JD', 'QD', 'KD',
+               'AS', '2S', '3S', '4S', '5S', '6S', '7S', '8S', '9S', '10S',
+               'JS', 'QS', 'KS',
+               'AC', '2C', '3C', '4C', '5C', '6C', '7C', '8C', '9C', '10C',
+               'JC', 'QC', 'KC',],
      'outputs': [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13], #[values to be returned]
      'reason' : 'comprehensive testing, all cards in deck are tested'},
 ]
@@ -119,11 +129,8 @@ for t in test_value:
     args_in = t['inputs']
     expected = t['outputs']
 
-    #create the Card data structure
-    thing = Card.create()
-
-    #check if the value of each card in thing is correct
-    for index, card in enumerate(thing):
+    #check if the value of each card
+    for index, card in enumerate(args_in):
         if Card.value(card) != expected[index % 13]:
             print('Error in Card.value(), expected', expected[index % 13],
             'but got', Card.value(card))
@@ -182,7 +189,7 @@ test_average = [
      'reason' : 'Empty list'},
     {'inputs' :['3D'], #a deck of cards
      'outputs': [3], #[average]
-     'reason' : 'Empty list'},
+     'reason' : 'Single element list'},
     {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
      'outputs': [7.166667], #[average]
      'reason' : 'Decending deck with duplicate max value'},
