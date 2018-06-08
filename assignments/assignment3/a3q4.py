@@ -15,19 +15,19 @@ players = int(sys.argv[2])
 cards = int(sys.argv[3])
 
 def play_game(games, players, cards):
-        """
-        Purpose:
-            Plays a card game a number of times with the desired number of
-            players and cards. Prints out the result
-        Pre-conditions:
-            :param games: integer for desired number of games to play
-            :param players: integer for desired number of players
-            :param cards: integer for desired number of cards per player
-        Post-conditions:
-            (none)
-        Return:
-            (none)
-        """
+    """
+    Purpose:
+        Plays a card game a number of times with the desired number of
+        players and cards. Prints out the result
+    Pre-conditions:
+        :param games: integer for desired number of games to play
+        :param players: integer for desired number of players
+        :param cards: integer for desired number of cards per player
+    Post-conditions:
+        (none)
+    Return:
+        (none)
+    """
     #score_board keeps track of wins per player
     score_board = {}
     for i in range(players):
