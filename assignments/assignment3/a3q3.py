@@ -161,7 +161,9 @@ def average(list_of_cards):
     num_cards = len(list_of_cards)
     total_value = 0
 
-    for card in list_of_cards:
-        total_value += value(card)
-
-    return total_value/num_cards
+    if num_cards == 0:
+        return 0
+    else:
+        for card in list_of_cards:
+            total_value += value(card)
+        return total_value/num_cards
