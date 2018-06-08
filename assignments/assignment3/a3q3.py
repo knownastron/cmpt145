@@ -108,14 +108,16 @@ def maximum(list_of_cards):
     Return:
         the card with the highest value
     """
+    if len(list_of_cards) == 0:
+        return 0
+    else:
+        cur_max = list_of_cards[0]
 
-    cur_max = list_of_cards[0]
+        for card in list_of_cards[1:]:
+            if value(card) > value(cur_max):
+                cur_max = card
 
-    for card in list_of_cards[1:]:
-        if value(card) > value(cur_max):
-            cur_max = card
-
-    return cur_max
+        return cur_max
 
 
 def minimum(list_of_cards):
@@ -129,14 +131,17 @@ def minimum(list_of_cards):
     Return:
         the card with the lowest value
     """
+    if len(list_of_cards) == 0:
+        return 0
+    else:
+        cur_min = list_of_cards[0]
 
-    cur_min = list_of_cards[0]
+        for card in list_of_cards[1:]:
+            if value(card) < value(cur_min):
+                cur_min = card
 
-    for card in list_of_cards[1:]:
-        if value(card) < value(cur_min):
-            cur_min = card
+        return cur_min
 
-    return cur_min
 
 def average(list_of_cards):
     """
@@ -157,29 +162,3 @@ def average(list_of_cards):
         total_value += value(card)
 
     return total_value/num_cards
-
-
-
-#
-# my_deck = create()
-# deck1 = []
-# deck2 = []
-# deck3 = []
-# deck4 = []
-# for k in range(13):
-#     deck1.append(my_deck[k])
-# for k in range(13,26):
-#     deck2.append(my_deck[k])
-# for k in range(26, 39):
-#     deck3.append(my_deck[k])
-# for k in range(39,52):
-#     deck4.append(my_deck[k])
-# print(deck1)
-# print(deck2)
-# print(deck3)
-# print(deck4)
-# deal_hands = deal(11, 5, my_deck)
-# for i in deal_hands:
-#     print(i)
-#
-# print(my_deck)
