@@ -37,14 +37,15 @@ for index, line in enumerate(cases):
 
     months['Month ' + str(index +1)] = [urgent, non_urgent]
 
-print(months['Month 1'])
 
 #prints the cases per month
 for group in months:
     cases_for_month = ''
-    print(months[group][1])
-    for i in range(len(months[group][1])):
-        cases_for_month += str(Stack.pop(months[group][0]))
-    # for k in range(len(months[group][1])):
-    #     cases_for_month += Queue.dequeue(months[group])
+    len_urgent = len(months[group][0][1])
+    len_non_urgent = len(months[group][1][1])
+    cases_for_month += str(group) + ': '
+    for i in range(len_urgent):
+        cases_for_month += str(Stack.pop(months[group][0])) + " "
+    for k in range(len_non_urgent):
+        cases_for_month += Queue.dequeue(months[group][1]) + " "
     print(cases_for_month)
