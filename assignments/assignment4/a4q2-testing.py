@@ -7,8 +7,8 @@
 import a4q2 as Check
 
 #####################################################################
-# test Check.check_parentheses()
-#Unit testing
+# test Check.check_balance()
+# Unit testing
 
 
 test_create = [
@@ -56,11 +56,11 @@ for t in test_create:
     args_in = t['inputs']
     expected = t['outputs']
 
-    #get result from check_parentheses
-    result = Check.check_parentheses(args_in[0])
+    #get result from check_balance
+    result = Check.check_balance(args_in[0])
 
     if result != expected[0]:
-        print('Error in check_parentheses(): expected', expected[0],
+        print('Error in check_balance(): expected', expected[0],
             'but returned', result, '--', t['reason'])
 
 

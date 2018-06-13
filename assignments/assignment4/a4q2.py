@@ -9,7 +9,7 @@ import TStack as Stack
 
 
 
-def check_parentheses(expression):
+def check_balance(expression):
     """
     Purpose:
         Takes in a string and checks that the string is balanced - every
@@ -50,7 +50,7 @@ def check_parentheses(expression):
 
 if len(sys.argv) == 2:
     expression = sys.argv[1]
-    result = check_parentheses(expression)
+    result = check_balance(expression)
     if result == True:
         print("The expression is balanced")
     else:
