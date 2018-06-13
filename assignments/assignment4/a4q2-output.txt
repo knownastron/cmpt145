@@ -3,3 +3,20 @@
 #Student Number: 11101081
 #Course: CMPT 145-01
 #Lab: L03
+
+
+###BALANCED###
+
+assignment4 $ python3.6 a4q2.py '((adfido)){}[]'
+The expression is balanced
+
+assignment4 $ python3.6 a4q2.py '{8*3[2+(2^2)+2]}'
+The expression is balanced
+
+###NOT BALANCED###
+
+assignment4 $ python3.6 a4q2.py '{a+b) * (c * d}'
+The expression is not balanced
+
+assignment4 $ python3.6 a4q2.py '[( a+b ] * 5)'
+The expression is not balanced
