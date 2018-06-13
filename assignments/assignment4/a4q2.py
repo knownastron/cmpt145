@@ -48,10 +48,24 @@ def check_balance(expression):
 
     return (Stack.is_empty(para_stack))
 
-if len(sys.argv) == 2:
-    expression = sys.argv[1]
-    result = check_balance(expression)
+def print_balance(result):
+    """
+    Purpose:
+        Takes in a bool and prints that the expression is balanced or unbalanced
+    Pre-condition:
+        :param expression: a boolean
+    Post-condition:
+        (none)
+    Return:
+        (none)
+    """
     if result == True:
         print("The expression is balanced")
     else:
-        print("The expression is not balanced")
+        print("The expression is unbalanced")
+
+
+if len(sys.argv) == 2:
+    expression = sys.argv[1]
+    result = check_balance(expression)
+    print_balance(result)
