@@ -9,10 +9,6 @@ import TStack as Stack
 
 
 
-expression = sys.argv[1]
-
-para_stack = Stack.create()
-
 def check_parentheses(para_stack):
     for char in expression:
         #checks for opening parentheses
@@ -21,20 +17,21 @@ def check_parentheses(para_stack):
 
         #checks for closing parentheses
         elif char == ')':
-            if Stack.is_empty(para_stack):
+            if Stack.is_empty(para_stack) or Stack.peek(para_stack) != '(' :
                 return False
-            elif Stack.peek(para_stack) == '(' :
+            else: 
                 Stack.pop(para_stack)
         elif char == ']':
-            if Stack.is_empty(para_stack):
+            if Stack.is_empty(para_stack) or Stack.peek(para_stack) != '[':
                 return False
-            elif Stack.peek(para_stack) == '[' :
+            else:
                 Stack.pop(para_stack)
         elif char == '}':
-            if Stack.is_empty(para_stack):
+            if Stack.is_empty(para_stack) or Stack.peek(para_stack) != '{':
                 return False
-            elif Stack.peek(para_stack) == '{' :
+            else:
                 Stack.pop(para_stack)
+
     return (Stack.is_empty(para_stack))
 
 if len(sys.argv) == 2:
