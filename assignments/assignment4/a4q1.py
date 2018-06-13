@@ -58,7 +58,7 @@ def set_urgency(cases):
         urgent = Stack.create()
 
         for case in line:
-            if case[:3] == 'URG-':
+            if case[:4] == 'URG-':
                 Stack.push(urgent, case)
             else:
                 Queue.enqueue(non_urgent, case)
