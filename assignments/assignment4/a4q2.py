@@ -50,4 +50,8 @@ def check_parentheses(expression):
 
 if len(sys.argv) == 2:
     expression = sys.argv[1]
-    print(check_parentheses(expression))
+    result = check_parentheses(expression)
+    if result == True:
+        print("The expression is balanced")
+    else:
+        print("The expression is not balanced")
