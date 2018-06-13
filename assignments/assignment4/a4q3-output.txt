@@ -1,0 +1,29 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+
+
+assignment4 $ python3.6 a4q3.py
+Enter an expression to check if the parentheses are balanced. Enter 'quit' to end program:
+>(3+6)* [2+2(2^4)}
+The expression is unbalanced
+>((())){{{}}}[[[]]]
+The expression is balanced
+>Helloooooooo World!
+The expression is balanced
+>quit
+Goodbye!
+
+assignment4 $ python3.6 a4q3.py
+Enter an expression to check if the parentheses are balanced. Enter 'quit' to end program:
+>(adsjfoij)[adlfja]{kadjfadf}
+The expression is balanced
+>(not}[balanced)
+The expression is unbalanced
+>(())shouldBeBalanced{}
+The expression is balanced
+>quit
+Goodbye!
