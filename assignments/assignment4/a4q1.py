@@ -84,8 +84,8 @@ def print_cases(months):
     """
     for group in months:
         cases_for_month = ''
-        len_urgent = len(months[group][0][1])
-        len_non_urgent = len(months[group][1][1])
+        len_urgent = Stack.size(months[group][0])
+        len_non_urgent = Queue.size(months[group][1])
 
         cases_for_month += str(group) + ': ' #adds the month to the string to be printed
 
