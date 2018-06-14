@@ -34,7 +34,7 @@ def is_empty(queue):
     Return:
         True if the queue has no data, or false otherwise
     """
-    return True
+    return Stack.is_empty(queue['e-stack']) == 0 and Stack.is_empty(queue['d-stack']) == 0
 
 
 def size(queue):
@@ -46,7 +46,7 @@ def size(queue):
     Return:
         The number of data values in the queue
     """
-    return 0
+    return Stack.size(queue['e-stack']) + Stack.size(queue['d-stack'])
 
 
 def enqueue(queue, value):
@@ -71,7 +71,7 @@ def dequeue(queue):
     Pre-conditions:
         queue: a queue created by create()
     Post-condition:
-        the first value is removed from the queue
+        the first value is r emoved from the queue
     Return:
         the first value in the queue
         """
@@ -91,4 +91,3 @@ def peek(queue):
         the value at the front of the queue
     """
     return None
-
