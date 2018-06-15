@@ -34,7 +34,8 @@ def is_empty(queue):
     Return:
         True if the queue has no data, or false otherwise
     """
-    return Stack.is_empty(queue['e-stack']) == 0 and Stack.is_empty(queue['d-stack']) == 0
+
+    return Stack.is_empty(queue['e-stack']) and Stack.is_empty(queue['d-stack'])
 
 
 def size(queue):
@@ -46,6 +47,7 @@ def size(queue):
     Return:
         The number of data values in the queue
     """
+
     return Stack.size(queue['e-stack']) + Stack.size(queue['d-stack'])
 
 
@@ -61,8 +63,14 @@ def enqueue(queue, value):
     Return:
         (none)
     """
-    return
 
+    if Stack.is_empty(queue['d-stack']):
+        Stack.push(queue['e-stack'], value)
+    else:
+        for i in range(Stack.size(queue['d-stack'])):
+            cur_item = Stack.pop(queue['d-stack'])
+            Stack.push(queue['e-stack'], cur_item)
+        Stack.push(queue['e-stack'], value)
 
 def dequeue(queue):
     """
@@ -75,7 +83,14 @@ def dequeue(queue):
     Return:
         the first value in the queue
         """
-    return None
+
+    if Stack.is_empty(queue['e-stack']):
+        return Stack.pop(queue['d-stack'])
+    else:
+        for i in range(Stack.size(queue['e-stack'])):
+            cur_item = Stack.pop(queue['e-stack'])
+            Stack.push(queue['d-stack'], cur_item)
+        return Stack.pop(queue['d-stack'])
 
 
 
@@ -90,4 +105,10 @@ def peek(queue):
     Return:
         the value at the front of the queue
     """
-    return None
+
+    if Stack.is_empty(queue['e-stack']):
+        t, s = queue['d-stack']
+        return s[-1]
+    else:
+        t, s = queue['e-stack']
+        return s[0]
