@@ -1,0 +1,365 @@
+commit 41a5aeb213c46730decebfa35ada38b09b32b848 (HEAD -> master, origin/master)
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 14 21:29:00 2018 -0600
+
+    implement enqueue(), dequeue(), peek()
+
+commit 55771aa49e6104735dd4f1fd98841469cf593927
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 14 15:51:20 2018 -0600
+
+    implement is_empty(), size()
+
+commit 43614dc997d645cadc967e6d61a71f9c7619d090
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 14 10:55:16 2018 -0600
+
+    implement main testing for size(), peek(), enqueue() and dequeue()
+
+commit d5d25731e075fca8b7d95d609e3c748fca6993a4
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 14 10:13:36 2018 -0600
+
+    implement test_create
+
+commit f8ff503d181104b2fddc4df012078b3751392bd7
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 19:34:24 2018 -0600
+
+    changed len_urgent and len_non_urgent to use size()
+
+commit 7ff98c05aa2ad2455790cd8affa00f4cf6d0bea9
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 11:36:02 2018 -0600
+
+    add examples - complete
+
+commit ed18800ad34afa555fb9c425544a297cade8fc87
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 11:32:15 2018 -0600
+
+    implement print_balance() into main REPL - complete
+
+commit c2a9be1b79c9420b5f7abd1251606ebe7d437d67
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 11:29:48 2018 -0600
+
+    implement main REPL
+
+commit 7f6cecc3aef32b4e85aec56081f0f3e95e0876bb
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 11:29:24 2018 -0600
+
+    refactored print statement into print_balance()
+
+commit 261367ee5df79eb0cead25ab9a9b7565f6b20d51
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 11:19:16 2018 -0600
+
+    initial commit
+
+commit b455841835acf4754c5b56b5ebc2dbca6be0a8f7
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 10:59:51 2018 -0600
+
+    add two examples of balanced/not balanced
+
+commit e0e55ee86388735e66896e4e40ea7cb0100d0c57
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 10:59:11 2018 -0600
+
+    change name to check_balance()
+
+commit c2fcf3d63f02e8876ac8a1426bcc7340cdbb6124
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 10:55:56 2018 -0600
+
+    add print statement 'is balanced' or 'is not balanced'
+
+commit bf11d74fb75705155b0490a7694752e2a48f46df
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 10:52:33 2018 -0600
+
+    change check_parentheses to take expression param, add docString
+
+commit 938075763c23feb7294a509c7b948f39ea1f5805
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 13 10:48:55 2018 -0600
+
+    implemented test cases from the assignment
+
+commit cb7d8a7ad757ef2f3f9fa922613a6c4d6e099418
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 22:00:52 2018 -0600
+
+    simplified the if statements for closing brackets
+
+commit c3c7c988cf8386fa32702eacbb0c245d252ff255
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 21:57:26 2018 -0600
+
+    refactored main program as a function for testing
+
+commit 7a9a6637a6b21aea8bfef464d278c7f87feb3e96
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 21:53:00 2018 -0600
+
+    initial commit
+
+commit aeffd39d836b1f8e240f28c32fc41123640d8e7f
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 21:50:13 2018 -0600
+
+    complete program
+
+commit e857bf06d82537c9b4cdd8d3ce92eabf3a7dc880
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 21:49:40 2018 -0600
+
+    initial commit
+
+commit 6a143fe73813ca6160e3318df8051d1b7be0b718
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 20:57:41 2018 -0600
+
+    fixed bug, URG- should slice up to index 4
+
+commit 7deb4d063b7f9a0f48cd83152ea168f28397d218
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 20:55:04 2018 -0600
+
+    added docString for all functions
+
+commit ff536a91eeff73b1f23c9ddc011d526278aa2444
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 20:23:54 2018 -0600
+
+    refactored code into functions: get_cases(), set_urgency(), and print_cases()
+
+commit 629bf84babb53825367d765d77eae2296005f4ff
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 12 14:04:42 2018 -0600
+
+    implement printing of result
+
+commit cd2e62d2be27a4cd043fc7f9560ff89888ef251b
+Author: knownastron <knownastron@gmail.com>
+Date:   Mon Jun 11 22:41:36 2018 -0600
+
+    implement file read, implement urgent/non_urgent sort
+
+commit b85e30990b4db8d0f3a57a4abd91d51f0627379e
+Author: knownastron <knownastron@gmail.com>
+Date:   Mon Jun 11 20:48:35 2018 -0600
+
+    initial commit
+
+commit 9385f763215a56a0f1f7dab17844f69631ebcbee
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 11:13:49 2018 -0600
+
+    fixed indentation on play_game()
+
+commit 1c38ccdf4aee64681c3c3b907535403df7b189ae
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 11:08:57 2018 -0600
+
+    added docString for play_game() function
+
+commit 5125241940235f1f617b696e919673a6d223d0c7
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:59:58 2018 -0600
+
+    add 0 testing for test_value
+
+commit d8368e4c01fefbe0539eb63cd55df3f7fc09bcc2
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:51:32 2018 -0600
+
+    add empty list and singleton list test for test_average
+
+commit 5d925e163ff00ca588e912467934d9b666e3d2c0
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:51:06 2018 -0600
+
+    add test for empty list for average()
+
+commit 0e793350ee6cf8be974ce25ee361d715e57132c6
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:48:54 2018 -0600
+
+    Add empty list and singleton list test for test_min_max
+
+commit 2a5336864846334ec04746b78fe9e6c08604f3a1
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:46:38 2018 -0600
+
+    added check for 0 value card in value()
+
+commit 6ec264c84a96337145b36cbabe912c04455dcc6f
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:44:02 2018 -0600
+
+    changed minimum() and maximum() to check for empty list
+
+commit 45ef4826581e1858035f5235bdd595f6610d2079
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:30:15 2018 -0600
+
+    add error message if (cards * player) > 52. Encapsulate play_game() function
+
+commit 46a3fe77def6af8f3f0b16c30364387968ad8a59
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:20:14 2018 -0600
+
+    implement final printout
+
+commit 55199e87a9df338c9cfda4da3951d6d7d9ae34c6
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:19:47 2018 -0600
+
+    implement main loop that plays game
+
+commit dd62a8e8c726b83fe6a2d4bc9bb07bad4b5d0241
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jun 8 10:19:05 2018 -0600
+
+    implement console input and scoreboard tracker
+
+commit 98ffc0d4c3167c9939d4f3f33d1e477d142f8c82
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 7 14:34:43 2018 -0600
+
+    implement testing for Card.average()
+
+commit 7d77bc88d208f1066b35386ab316c9bc84b0311c
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 7 14:34:28 2018 -0600
+
+    implement average()
+
+commit f00ef708f5f0a31aa611cc04572b0644309193ea
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 7 14:25:59 2018 -0600
+
+    implement minimum() and maximum() testing
+
+commit 71a1fbddf1bce2eb82f273de26216a65e281f040
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jun 7 14:25:26 2018 -0600
+
+    implement minimum() and maximum(), add pop to deal() function
+
+commit f16fc3f16c8dc594ee8965e1088fb563a99c5fb1
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 16:39:55 2018 -0600
+
+    implement maximum() and minimum()
+
+commit 7f67abd05870543d557e37f4138353baf12674f7
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 15:53:21 2018 -0600
+
+    implement testing for value()
+
+commit 4d2c904f2e1215c8456172540832ea52db0f113f
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 15:53:00 2018 -0600
+
+    implement value()
+
+commit 47b4d892089d1ea247858f5dc2884a2d9c625f74
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 15:34:41 2018 -0600
+
+    implement testing for Card.deal()
+
+commit 16653729f85ac8148a985a5b7bfd005492b98037
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 11:41:13 2018 -0600
+
+    implement deal() and added docString for both create()
+
+commit 1bb19b0aa1ce9e5707b986e7c2154180ae87f8cf
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 11:02:49 2018 -0600
+
+    implement test for create()
+
+commit 1ef9964f29b65bccb044877957075ac8e9a46d29
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 10:54:30 2018 -0600
+
+    initial commit
+
+commit 121f6571202b7bbf09efa2f5a4a6bf3bc219f0fa
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jun 6 10:54:05 2018 -0600
+
+    initial commit, implement create()
+
+commit e4639d3a857c59b2581b000c799dbe3c9f04670a
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 22:34:46 2018 -0600
+
+    cleaned up test_statistics file
+
+commit 7b7e3391f81d72c8b47e3427e0d44f68bff9fc7c
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 22:13:42 2018 -0600
+
+    Add test_min_max() and added additional tests for test_count
+
+commit 33d29a49e7587bd9dce85bd48ee7aba07f8c8736
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 21:53:23 2018 -0600
+
+    implement minimum() and maximum()
+
+commit d7d8bf961b5fe236370524339504340f85db30da
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 21:50:43 2018 -0600
+
+    add min and max testing to test_create and test_add
+
+commit b7e137cf0f1bf51f31e6e727f456547c8c7bfa45
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 11:47:03 2018 -0600
+
+    Add 'min' 'max' keys to create(), add modify 'min' 'max' to add()
+
+commit 5eb532c5abfddc31ba8b0aed4daf8b4418d62c08
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 11:10:57 2018 -0600
+
+    implement git tests for count() method
+
+commit ac7a9f8bce108768999f60e2d6dcac4a90ab9b6f
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 10:59:16 2018 -0600
+
+    implement count method
+
+commit a9ac321fdda46cc239b700e373a6f89c0ea52918
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 10:51:45 2018 -0600
+
+    implement mixed pos-neg float-int test to test_mean
+
+commit 9f3250f968e96c96c9e03c6227bc8d354656f006
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 10:32:46 2018 -0600
+
+    implement additional test_mean tests, changed if statments to abs difference
+
+commit ee60fad49c318864fd9fd240deefabd2b4165905
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jun 5 10:29:13 2018 -0600
+
+    implement additional test_add tests, changed if statement to abs difference
+
+commit 52bed13d749a7dc74ced99c9248303056d8b3913
+Author: knownastron <knownastron@gmail.com>
+Date:   Mon Jun 4 17:40:15 2018 -0600
+
+    initial commit

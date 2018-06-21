@@ -1,0 +1,45 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+
+#cases.txt
+
+assignment4 $ python3.6 a4q1.py cases.txt
+Month 1: URG-dl6_incident URG-KG8_incident steel_samurai gramarye_murder airlines
+Month 2: URG-SL9_incident URG-edgeworth reunion_turnabout larry_butz doug
+Month 3: URG-kidnapping URG-mask*demasque turnabout_corner romein_letouse
+
+steel_samurai URG-KG8_incident gramarye_murder airlines URG-dl6_incident
+URG-edgeworth reunion_turnabout larry_butz URG-SL9_incident doug
+turnabout_corner romein_letouse URG-mask*demasque URG-kidnapping
+
+
+#cases1.txt
+
+assignment4 $ python3.6 a4q1.py cases1.txt
+Month 1: URG-USA URG-Prussia URG-Britain Spain France
+Month 2: URG-Singapore URG-Mongolia China Vietnam Korea
+Month 3: Iraq Iran Palestine Israel Syria
+Month 4: URG-Brazil Cuba
+
+URG-Britain Spain France URG-Prussia URG-USA
+China Vietnam URG-Mongolia URG-Singapore Korea
+Iraq Iran Palestine Israel Syria
+URG-Brazil Cuba
+
+#cases2.txt
+
+assignment4 $ python3.6 a4q1.py cases2.txt
+Month 1: URG-mathematics URG-computer_science philosophy sociology gender_studies
+Month 2: URG-physics URG-economics biology chemistry
+Month 3: URG-business_strategy accounting finance marketing human_resources
+Month 4: URG-pharmacy URG-medicine URG-law music art kinesiology
+
+
+philosophy sociology URG-computer_science URG-mathematics gender_studies
+URG-economics biology chemistry URG-physics
+accounting finance marketing human_resources URG-business_strategy
+music art kinesiology URG-law URG-medicine URG-pharmacy

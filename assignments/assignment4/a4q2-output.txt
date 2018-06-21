@@ -5,7 +5,7 @@
 #Lab: L03
 
 
-###BALANCED###
+### BALANCED ###
 
 assignment4 $ python3.6 a4q2.py '((adfido)){}[]'
 The expression is balanced
@@ -13,7 +13,8 @@ The expression is balanced
 assignment4 $ python3.6 a4q2.py '{8*3[2+(2^2)+2]}'
 The expression is balanced
 
-###NOT BALANCED###
+
+### NOT BALANCED ###
 
 assignment4 $ python3.6 a4q2.py '{a+b) * (c * d}'
 The expression is not balanced

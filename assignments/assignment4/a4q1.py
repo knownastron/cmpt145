@@ -50,13 +50,14 @@ def set_urgency(cases):
         A dictionary, each key is a month and each value is a list of two
         elements, a stack of urgent cases and a queue of non-urgent cases
     """
-    #create dictionary to track each month:
+    #create dictionary to track each month
     months = {}
 
     for index, line in enumerate(cases):
         non_urgent = Queue.create()
         urgent = Stack.create()
 
+        #loop through each case and either push or enqueue depending on urgency
         for case in line:
             if case[:4] == 'URG-':
                 Stack.push(urgent, case)
@@ -87,7 +88,8 @@ def print_cases(months):
         len_urgent = Stack.size(months[group][0])
         len_non_urgent = Queue.size(months[group][1])
 
-        cases_for_month += str(group) + ': ' #adds the month to the string to be printed
+        #adds the month to the string to be printed
+        cases_for_month += str(group) + ': '
 
         #adds all the urgent cases in LIFO order to the line
         for i in range(len_urgent):
@@ -97,6 +99,7 @@ def print_cases(months):
             cases_for_month += Queue.dequeue(months[group][1]) + " "
         print(cases_for_month)
 
+#only runs if there is a command line argument
 if len(sys.argv) == 2:
     cases = get_cases()
     months = set_urgency(cases)

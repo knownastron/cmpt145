@@ -1,0 +1,4 @@
+philosophy sociology URG-computer_science URG-mathematics gender_studies
+URG-economics biology chemistry URG-physics
+accounting finance marketing human_resources URG-business_strategy
+music art kinesiology URG-law URG-medicine URG-pharmacy

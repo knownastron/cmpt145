@@ -4,7 +4,7 @@
 #Course: CMPT 145-01
 #Lab: L03
 
-import TQueue as Queue
+import QueueTwo as Queue
 
 ###############################################################################
 # test Queue.create() using Queue.is_empty() and Queue.size()
@@ -54,12 +54,8 @@ test_queue = [
      'outputs': [False, 5, 1.1, True, 0, None],
      'reason' : 'Floats ascending - True on second empty check'},
     {'inputs' : [10.1, 9.2, 8.5, 7.7, 6.9],
-     'outputs': [False, 5, 10.15, True, 0, None],
+     'outputs': [False, 5, 10.1, True, 0, None],
      'reason' : 'Floats decending - True on second empty check'},
-    # {'inputs' : [],
-    #  'outputs': [True, 0, None],
-    #  'reason' : ''},
-
 ]
 
 for t in test_queue:
