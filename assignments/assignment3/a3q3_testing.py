@@ -59,7 +59,6 @@ test_deal = [
     {'inputs' : [11, 5], #[num_cards, num_players]
      'outputs': [5, 8, 0], #[hands dealt, cards in *last* hand, cards remaining in deck]
      'reason' : 'deck runs out of cards before all players dealt all cards'},
-
 ]
 
 for t in test_deal:
@@ -106,7 +105,7 @@ for t in test_deal:
 
 #####################################################################
 # test Card.value()
-# Integration testing
+# Unit Testing
 
 
 test_value = [
@@ -144,7 +143,7 @@ for t in test_value:
 test_min_max = [
     {'inputs' :[], #a deck of cards
      'outputs': [0, 0], #[min value, max value]
-     'reason' : 'Empty hand'},
+     'reason' : 'Empty hand/list'},
     {'inputs' :['AH'], #a deck of cards
      'outputs': [1, 1], #[min value, max value]
      'reason' : 'Exactly one card'},
@@ -186,10 +185,10 @@ for t in test_min_max:
 test_average = [
     {'inputs' :[], #a deck of cards
      'outputs': [0], #[average]
-     'reason' : 'Empty list'},
+     'reason' : 'Empty hand/list'},
     {'inputs' :['3D'], #a deck of cards
      'outputs': [3], #[average]
-     'reason' : 'Single element list'},
+     'reason' : 'Exactly one card'},
     {'inputs' :['AH', '2D', '5C', '9D', 'KS', 'KC'], #a deck of cards
      'outputs': [7.166667], #[average]
      'reason' : 'Decending deck with duplicate max value'},

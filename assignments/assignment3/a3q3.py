@@ -8,6 +8,7 @@
 
 import random as rand
 
+
 def create():
     """
     Purpose:

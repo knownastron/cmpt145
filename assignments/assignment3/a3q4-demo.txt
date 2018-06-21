@@ -1,0 +1,45 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+#Assignment 3 Question 4 demo
+
+################################################################################
+
+assignment3 $ python3.6 a3q4.py 4 3 5
+Running 4 games with 3 players drawing 5 cards each
+Player 2 won with a KC (13)
+Player 1 won with a KH (13)
+Player 2 won with a KH (13)
+Player 2 won with a KC (13)
+---SCOREBOARD---
+Player 1 won a total of 1 games
+Player 2 won a total of 3 games
+Player 3 won a total of 0 games
+
+################################################################################
+
+assignment3 $ python3.6 a3q4.py 10 4 5
+Running 10 games with 4 players drawing 5 cards each
+Player 3 won with a KD (13)
+Player 2 won with a KS (13)
+Player 1 won with a KS (13)
+Player 3 won with a KD (13)
+Player 4 won with a KD (13)
+Player 4 won with a KS (13)
+Player 1 won with a KH (13)
+Player 4 won with a KC (13)
+Player 2 won with a KS (13)
+Player 1 won with a KD (13)
+---SCOREBOARD---
+Player 1 won a total of 3 games
+Player 2 won a total of 2 games
+Player 3 won a total of 2 games
+Player 4 won a total of 3 games
+
+################################################################################
+
+assignment3 $ python3.6 a3q4.py 8 8 7
+There are not enough cards for 8 players to be dealt 7 cards each. Please retry with different number of players and/or cards.

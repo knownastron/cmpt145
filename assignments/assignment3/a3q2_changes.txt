@@ -1,0 +1,11 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+#Assignment 3 Question 2
+
+1. Added 2 new key-value pairs when create() is called. 'max' and 'min' which are both set to None to begin with.
+
+2. In the add() function, added code that changes max if the value if greater than 'max' and changes min if the value is less than 'min'. Changes both 'max' and 'min' if the values are both None.
