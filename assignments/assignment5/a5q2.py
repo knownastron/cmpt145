@@ -45,11 +45,15 @@ def delete_front_nodes(node_chain, n):
     cur_node = node_chain
     count = 0
 
-    while count != n:
+    while True:
         count += 1
-        if count == n:
+        if cur_node == None:
+            node_chain = None
+            break
+        elif count == n:
             node_chain = node.get_next(cur_node)
         cur_node = node.get_next(cur_node)
+
 
     return node_chain
 
