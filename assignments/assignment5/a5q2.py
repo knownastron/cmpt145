@@ -1,10 +1,10 @@
-# CMPT 145: Assignment 5 Question 2
-
 #Name: Jason Tran
 #NSID: jat687
 #Student Number: 11101081
 #Course: CMPT 145-01
 #Lab: L03
+
+# CMPT 145: Assignment 5 Question 2
 
 import node as node
 
@@ -54,7 +54,6 @@ def delete_front_nodes(node_chain, n):
             node_chain = node.get_next(cur_node)
         cur_node = node.get_next(cur_node)
 
-
     return node_chain
 
 
@@ -82,6 +81,7 @@ def replace_last(node_chain, target_val, replacement_val):
             target_node = cur_node
         cur_node = node.get_next(cur_node)
 
+    #if there is a target node, change its data value
     if target_node != None:
         node.set_data(target_node, replacement_val)
 
