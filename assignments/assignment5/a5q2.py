@@ -72,4 +72,17 @@ def replace_last(node_chain, target_val, replacement_val):
     Return:
         :return: The altered node chain where any data occurrences of target_val has been replaced with replacement_val.
     """
-    return None
+
+    cur_node = node_chain
+    target_node = None
+
+    while cur_node != None:
+        cur_value = node.get_data(cur_node)
+        if cur_value == target_val:
+            target_node = cur_node
+        cur_node = node.get_next(cur_node)
+
+    if target_node != None:
+        node.set_data(target_node, replacement_val)
+
+    return node_chain
