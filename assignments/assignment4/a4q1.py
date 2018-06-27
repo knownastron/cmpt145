@@ -100,7 +100,7 @@ def print_cases(months):
         print(cases_for_month)
 
 #only runs if there is a command line argument
-if len(sys.argv) == 2:
+if __name__ == '__main__':
     cases = get_cases()
     months = set_urgency(cases)
     print_cases(months)

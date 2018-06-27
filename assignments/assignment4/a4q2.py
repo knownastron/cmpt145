@@ -65,7 +65,7 @@ def print_balance(result):
         print("The expression is unbalanced")
 
 
-if len(sys.argv) == 2:
+if __name__ == '__main__':
     expression = sys.argv[1]
     result = check_balance(expression)
     print_balance(result)
