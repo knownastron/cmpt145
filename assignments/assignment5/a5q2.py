@@ -42,7 +42,17 @@ def delete_front_nodes(node_chain, n):
     Return:
         :return: The resulting node chain, which may now be empty (None)
     """
-    return None
+    cur_node = node_chain
+    count = 0
+
+    while count != n:
+        count += 1
+        if count == n:
+            node_chain = node.get_next(cur_node)
+        cur_node = node.get_next(cur_node)
+
+    return node_chain
+
 
 
 def replace_last(node_chain, target_val, replacement_val):
