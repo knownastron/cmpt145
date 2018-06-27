@@ -1,0 +1,67 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+
+### REFLECTIONS ###
+
+Q1. The average wait time does not change between the two different implementations of Queue and Stack
+Q2. Yes! The maximum wait time changes drastically when the Stack implementation is used!
+Q3. It is very easy to switch between the two implementations. Just change the Q to an S (or vice versa) when importing ContainerS or Container Q.
+
+
+### BEFORE ###
+
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.783684816977372 Minimum: 0.00024425644960501813 Maximum 68.55901383103264 Variance: 117.10712019192249 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.496315019326651 Minimum: 0.00010234257933916524 Maximum 65.48007482809044 Variance: 112.43403342035884 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 8.20531524628683 Minimum: 7.145489507820457e-05 Maximum 49.44861210913223 Variance: 59.74388682924417 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 13.094620445700276 Minimum: 8.438004442723468e-05 Maximum 64.98226088936644 Variance: 161.924389074051 Size: 100000
+
+
+### AFTER EDITING FOR CONTAINERQ ###
+
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 9.410330142065467 Minimum: 4.0882459870772436e-05 Maximum 62.23768817175005 Variance: 95.58981658961466 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 9.754156088139 Minimum: 1.3574834156315774e-05 Maximum 74.27401054521033 Variance: 108.88108262645144 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 11.568601365092839 Minimum: 9.154836516245268e-05 Maximum 70.98061540574054 Variance: 112.32493416923717 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.068552852612784 Minimum: 0.00018287525017512962 Maximum 66.16215410594305 Variance: 105.85504904728474 Size: 100000
+
+
+### AFTER EDITING FOR CONTAINERS ###
+
+Wait time statistics: Average: 9.382670578929876 Minimum: 2.112661604769528e-06 Maximum 1454.5280544089892 Variance: 3262.3686491619287 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 9.213368203575957 Minimum: 1.2471464287955314e-05 Maximum 1432.7656280325718 Variance: 2638.500811312152 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.751898986588223 Minimum: 3.939680027542636e-06 Maximum 1663.6018674675033 Variance: 3920.985445088002 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 8.049363835078644 Minimum: 6.984118954278529e-06 Maximum 1255.287607704522 Variance: 1668.2723597395754 Size: 100000
+
+
+### SOME EXPERIMENTAL OUTPUT ###
+
+#import ContainerQ
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.530144134195318 Minimum: 8.50630476634251e-06 Maximum 55.826865195513165 Variance: 99.40174905150454 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 8.916813470450636 Minimum: 6.84240853843221e-05 Maximum 48.275768764986424 Variance: 60.76247132317981 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 9.775678014435586 Minimum: 6.149058390292339e-05 Maximum 65.61072144895843 Variance: 103.41147764859201 Size: 100000
+
+#import ContainerS
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 12.705315805747848 Minimum: 7.338225259445608e-06 Maximum 2796.631283258117 Variance: 8624.332770578769 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 10.027966679553943 Minimum: 4.220382834319025e-06 Maximum 2430.982590003652 Variance: 4420.691548555929 Size: 100000
+lab05 $ python3.6 MM1.py
+Wait time statistics: Average: 7.148764207201302 Minimum: 7.317939889617264e-07 Maximum 1022.3331973839377 Variance: 1048.2117722756968 Size: 100000
+lab05 $
