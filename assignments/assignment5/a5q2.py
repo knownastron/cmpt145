@@ -1,5 +1,11 @@
 # CMPT 145: Assignment 5 Question 2
 
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 import node as node
 
 
@@ -13,7 +19,15 @@ def count_chain(node_chain):
     Return:
         :return: The number of nodes in the node chain.
     """
-    return 0
+
+    count = 0
+    cur_node = node_chain
+
+    while cur_node is not None:
+        count += 1
+        cur_node = node.get_next(cur_node)
+
+    return count
 
 
 def delete_front_nodes(node_chain, n):
