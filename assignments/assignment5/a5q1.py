@@ -1,3 +1,9 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 # CMPT 145: Assignment 5 Question 1
 
 import node as node
@@ -22,9 +28,10 @@ def to_string(node_chain):
         value = node.get_data(walker)
         # print the data
         result = '[ ' + str(value) + ' |'
+        walker = node.get_next(walker)
         while walker is not None:
-            walker = node.get_next(walker)
             value = node.get_data(walker)
+            walker = node.get_next(walker)
             # represent the next with an arrow-like figure
             result += ' *-]-->[ '+str(value)+' |'
 
@@ -32,4 +39,3 @@ def to_string(node_chain):
         result += ' / ]'
 
     return result
-
