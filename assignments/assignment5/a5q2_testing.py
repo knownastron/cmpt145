@@ -36,34 +36,34 @@ for t in test_count_chain:
 
 test_delete_front_nodes = [
     {'inputs' : [None, 0],  # Inputs are node_chain, and number of nodes to delete
-     'outputs': 0,
+     'outputs': 'EMPTY',
      'reason' : 'Empty node chain, nothing to remove'},
 
     {'inputs' : [node.create(1), 1],
-     'outputs': 0,
+     'outputs': 'EMPTY',
      'reason' : 'Node chain with single nodes to remove '},
 
-    {'inputs' : [node.create(1, node.create('two')), 3],
-     'outputs': 2,
+    {'inputs' : [node.create(1, node.create('two')), 1],
+     'outputs': '[ two | / ]',
      'reason' : 'Node chain with multiple nodes, front should be removed'},
 
     {'inputs' : [node.create(1, node.create('two', node.create(3))), 2],
-     'outputs': 1,
+     'outputs': '[ 3 | / ]',
      'reason' : 'node chain with multiple nodes, all but one should be removed'},
 
     {'inputs': [node.create(1, node.create('two', node.create(3))), 6],
-     'outputs': 0,
+     'outputs': 'EMPTY',
      'reason': 'node chain with multiple nodes, remove all of them'},
 ]
 
 for t in test_delete_front_nodes:
     args_in = t['inputs']
+    expected = t['outputs']
     altered_chain = a5q2.delete_front_nodes(args_in[0], args_in[1])
     # Use count_chain to see how many nodes should be remaining
-    result = a5q2.count_chain(altered_chain)
-    assert (args_in is None and result is None) \
-           or (args_in is not result), \
-        'delete_front_nodes(): incorrectly sized chainr returned -- '+t['reason']
+    result = a5q1.to_string(altered_chain)
+    assert (result == result), \
+        'delete_front_nodes(): got "'+result+'" expected "'+expected+'" -- '+t['reason']
 
 
 
