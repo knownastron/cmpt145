@@ -13,7 +13,17 @@ def contains_duplicates(node_chain):
     Return:
         :return: True if duplicate data value(s) were found, False otherwise
     """
-    return False
+
+    cur_node = node_chain
+    word_list = []
+
+    while cur_node is not None:
+        cur_word = node.get_data(cur_node)
+        if cur_word in word_list:
+            return False
+        word_list.append(cur_word)
+
+    return True
 
 
 
@@ -49,4 +59,3 @@ def insert_value_sorted(node_chain, number_value):
         :return: the node-chain with the new value in it
     """
     return None
-
