@@ -49,12 +49,15 @@ def reverse_chain(node_chain):
         prev_node = None
         next_node = node.get_next(node_chain)
 
-        while cur_node != None:
+        while True:
             node.set_next(cur_node, prev_node)
             prev_node = cur_node
             cur_node = next_node
-            #don't get_next if next_node is already the last next value of None
-            if next_node is not None:
+
+            #If next is None break, otherwise, move next to next node
+            if next_node is None:
+                break
+            else:
                 next_node = node.get_next(next_node)
 
         node_chain = prev_node
@@ -79,4 +82,44 @@ def insert_value_sorted(node_chain, number_value):
     Return
         :return: the node-chain with the new value in it
     """
-    return None
+
+    #if the node chain is empty, add the new node
+    if a5q2.count_chain(node_chain) < 1:
+        node_chain = node.create(number_value, None)
+    else:
+        cur_node = node_chain
+        prev_node = None
+        next_node = node.get_next(node_chain)
+
+        while True:
+            cur_val = node.get_data(cur_node)
+
+            #check if the value should be placed in front of current node
+            if cur_val == number_value + 1:
+                if prev_node == None:
+                    node_chain = node.create(number_value, cur_node)
+                else:
+                    new_node = node.create(number_value, cur_node)
+                    node.set_next(prev_node, new_node)
+                break
+
+            #check if the value should be placed behind the current node
+            if cur_val == number_value - 1:
+                if next_node == None:
+                    new_node = node.create(number_value, None)
+                    node.set_next(cur_node, new_node)
+                else:
+                    new_node = node.create(number_value, next_node)
+                    node.set_next(cur_node, new_node)
+                break
+
+            #break if at the end of the node chain
+            if next_node == None:
+                break
+            #move to next node if not at the end
+            else:
+                prev_node = cur_node
+                cur_node = next_node
+                next_node = node.get_next(next_node)
+
+    return node_chain
