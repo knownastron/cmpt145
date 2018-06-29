@@ -1,3 +1,9 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 # CMPT 145: Assignment 5 Question 3
 
 import node as node
@@ -43,18 +49,19 @@ def reverse_chain(node_chain):
         :return: The resulting node chain that has had its order reversed
     """
 
-    #if node_chain is empty, immediately return the node_chain
-    if a5q2.count_chain(node_chain) > 0:
+    #if node_chain is not a single node or empty, step through and reverse
+    if a5q2.count_chain(node_chain) > 1:
         cur_node = node_chain
         prev_node = None
         next_node = node.get_next(node_chain)
 
+        #step through and reverse each node
         while True:
             node.set_next(cur_node, prev_node)
             prev_node = cur_node
             cur_node = next_node
 
-            #If next is None break, otherwise, move next to next node
+            #If next_node is None break, otherwise, move next to next node
             if next_node is None:
                 break
             else:
@@ -86,6 +93,8 @@ def insert_value_sorted(node_chain, number_value):
     #if the node chain is empty, add the new node
     if a5q2.count_chain(node_chain) < 1:
         node_chain = node.create(number_value, None)
+
+    #if chain is not empty, find the proper place
     else:
         cur_node = node_chain
         prev_node = None
@@ -96,6 +105,7 @@ def insert_value_sorted(node_chain, number_value):
 
             #check if the value should be placed in front of current node
             if cur_val == number_value + 1:
+                #check if the target node is the first node
                 if prev_node == None:
                     node_chain = node.create(number_value, cur_node)
                 else:
@@ -103,8 +113,9 @@ def insert_value_sorted(node_chain, number_value):
                     node.set_next(prev_node, new_node)
                 break
 
-            #check if the value should be placed behind the current node
+            #check if the value should be placed after the current node
             if cur_val == number_value - 1:
+                #check if target node is the last node in chain
                 if next_node == None:
                     new_node = node.create(number_value, None)
                     node.set_next(cur_node, new_node)
@@ -116,7 +127,7 @@ def insert_value_sorted(node_chain, number_value):
             #break if at the end of the node chain
             if next_node == None:
                 break
-            #move to next node if not at the end
+            #move to next node if not at the end of the chain
             else:
                 prev_node = cur_node
                 cur_node = next_node

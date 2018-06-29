@@ -23,6 +23,7 @@ def count_chain(node_chain):
     count = 0
     cur_node = node_chain
 
+    #increment through entire node chain, adding 1 to count at each node
     while cur_node is not None:
         count += 1
         cur_node = node.get_next(cur_node)
@@ -45,6 +46,7 @@ def delete_front_nodes(node_chain, n):
     cur_node = node_chain
     count = 0
 
+    #increment through the node chain until cur_node is the nth node to delete
     while True:
         count += 1
         if cur_node == None:
@@ -75,6 +77,7 @@ def replace_last(node_chain, target_val, replacement_val):
     cur_node = node_chain
     target_node = None
 
+    #increment through the node chain to find the last example that matches target_val
     while cur_node != None:
         cur_value = node.get_data(cur_node)
         if cur_value == target_val:
