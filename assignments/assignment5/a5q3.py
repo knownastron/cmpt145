@@ -18,10 +18,12 @@ def contains_duplicates(node_chain):
     word_list = []
 
     while cur_node is not None:
-        cur_word = node.get_data(cur_node)
-        if cur_word in word_list:
+        cur_val = node.get_data(cur_node)
+        #check if cur_val is in the word_list
+        if cur_val in word_list:
             return True
-        word_list.append(cur_word)
+        #add the cur_val to word_list
+        word_list.append(cur_val)
         cur_node = node.get_next(cur_node)
 
     return False
@@ -40,7 +42,25 @@ def reverse_chain(node_chain):
     Return:
         :return: The resulting node chain that has had its order reversed
     """
-    return None
+
+    #if node_chain is empty, immediately return the node_chain
+    if a5q2.count_chain(node_chain) > 0:
+        cur_node = node_chain
+        prev_node = None
+        next_node = node.get_next(node_chain)
+
+        while cur_node != None:
+            node.set_next(cur_node, prev_node)
+            prev_node = cur_node
+            cur_node = next_node
+            #don't get_next if next_node is already the last next value of None
+            if next_node is not None:
+                next_node = node.get_next(next_node)
+
+        node_chain = prev_node
+
+    return node_chain
+
 
 
 
