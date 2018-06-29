@@ -20,10 +20,11 @@ def contains_duplicates(node_chain):
     while cur_node is not None:
         cur_word = node.get_data(cur_node)
         if cur_word in word_list:
-            return False
+            return True
         word_list.append(cur_word)
+        cur_node = node.get_next(cur_node)
 
-    return True
+    return False
 
 
 
