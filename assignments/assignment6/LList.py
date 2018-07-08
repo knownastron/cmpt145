@@ -51,7 +51,7 @@ def size(alist):
     Return:
         :return The number of data values in the list
     """
-    return 0
+    return alist['size']
 
 
 # TODO: complete add_to_front(alist, val)  --- when done, delete this line
