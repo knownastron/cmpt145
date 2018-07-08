@@ -34,7 +34,11 @@ def is_empty(alist):
     Return:
         :return True if the list has no data, or False otherwise
     """
-    return True
+
+    if alist['size'] == 0:
+        return True
+    else:
+        return False
 
 
 # TODO: complete size(alist)  --- when done, delete this line
@@ -219,5 +223,3 @@ def delete_item_at_index(alist, idx):
         :return True if index was valid, False otherwise
     """
     return False
-
-
