@@ -106,8 +106,6 @@ def add_to_back(alist, val):
         alist['size'] += 1
 
 
-
-# TODO: complete value_is_in(alist, val)   --- when done, delete this line
 def value_is_in(alist, val):
     """
     Purpose
@@ -145,6 +143,16 @@ def get_index_of_value(alist, val):
         :return the tuple (True, idx) if the val appears in alist
         :return the tuple (False, None) if the vale does not appear in alist
     """
+
+    cur_index = 0
+    cur_node = alist['head']
+
+    while cur_node is not None:
+        if node.get_data(cur_node) == val:
+            return True, cur_index
+        cur_node = node.get_next(cur_node)
+        cur_index += 1
+
     return False, None
 
 
