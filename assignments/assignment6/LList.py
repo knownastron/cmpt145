@@ -185,7 +185,6 @@ def retrieve_data_at_index(alist, idx):
 
 
 
-# TODO: complete set_data_at_index(alist, idx, val)   --- when done, delete this line
 def set_data_at_index(alist, idx, val):
     """
     Purpose
@@ -216,7 +215,6 @@ def set_data_at_index(alist, idx, val):
                 cur_node = node.get_next(cur_node)
 
 
-# TODO: complete remove_from_front(alist)   --- when done, delete this line
 def remove_from_front(alist):
     """
     Purpose
@@ -230,7 +228,24 @@ def remove_from_front(alist):
         :return The tuple (True, value) if alist is not empty
         :return The tuple (False, None) if alist is empty
     """
-    return False, None
+
+    if is_empty(alist):
+        return False, None
+    elif size(alist) == 1:
+        node_to_remove = alist['head']
+        removed_data = node.get_data(node_to_remove)
+        alist['head'] = None
+        alist['tail'] = None
+        alist['size'] = 0
+        return True, removed_data
+    else:
+        node_to_remove = alist['head']
+        removed_data = node.get_data(node_to_remove)
+        new_head = node.get_next(node_to_remove)
+        alist['head'] = new_head
+        alist['size'] -= 1
+
+        return True, removed_data
 
 # TODO: complete remove_from_back(alist)   --- when done, delete this line
 def remove_from_back(alist):
