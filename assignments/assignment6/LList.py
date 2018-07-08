@@ -69,8 +69,17 @@ def add_to_front(alist, val):
     Return:
         :return None
     """
-    pass
 
+
+    if size(alist) == 0:
+        new_node = node.create(val, None)
+        alist['head'] = new_node
+        alist['tail'] = new_node
+        alist['size'] += 1
+    else:
+        new_node = node.create(val, alist['head'])
+        alist['head'] = new_node
+        alist['size'] += 1
 
 # TODO: complete add_to_back(alist, val)  --- when done, delete this line
 def add_to_back(alist, val):
