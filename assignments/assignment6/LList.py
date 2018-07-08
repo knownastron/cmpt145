@@ -95,7 +95,20 @@ def add_to_back(alist, val):
     Return:
         :return None
     """
-    pass
+
+
+    if size(alist) == 0:
+        new_node = node.create(val, None)
+        alist['head'] = new_node
+        alist['tail'] = new_node
+        alist['size'] += 1
+    else:
+        cur_last_node = alist['tail']
+        new_node = node.create(val, None)
+        node.set_next(cur_last_node, new_node)
+        alist['tail'] = new_node
+        alist['size'] += 1
+        
 
 
 # TODO: complete value_is_in(alist, val)   --- when done, delete this line
