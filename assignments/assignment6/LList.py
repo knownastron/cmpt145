@@ -24,7 +24,6 @@ def create():
     return llist
 
 
-# TODO: complete is_empty(alist) --- when done, delete this line
 def is_empty(alist):
     """
     Purpose
@@ -41,7 +40,6 @@ def is_empty(alist):
         return False
 
 
-# TODO: complete size(alist)  --- when done, delete this line
 def size(alist):
     """
     Purpose
@@ -54,7 +52,6 @@ def size(alist):
     return alist['size']
 
 
-# TODO: complete add_to_front(alist, val)  --- when done, delete this line
 def add_to_front(alist, val):
     """
     Purpose
@@ -81,7 +78,6 @@ def add_to_front(alist, val):
         alist['head'] = new_node
         alist['size'] += 1
 
-# TODO: complete add_to_back(alist, val)  --- when done, delete this line
 def add_to_back(alist, val):
     """
     Purpose
@@ -108,7 +104,7 @@ def add_to_back(alist, val):
         node.set_next(cur_last_node, new_node)
         alist['tail'] = new_node
         alist['size'] += 1
-        
+
 
 
 # TODO: complete value_is_in(alist, val)   --- when done, delete this line
@@ -124,6 +120,14 @@ def value_is_in(alist, val):
     Return:
         :return True if the value is in the list, False otherwise
     """
+
+    cur_node = alist['head']
+
+    while cur_node is not None:
+        if node.get_data(cur_node) == val:
+            return True
+        cur_node = node.get_next(cur_node)
+
     return False
 
 
