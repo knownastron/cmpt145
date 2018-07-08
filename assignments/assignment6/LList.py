@@ -143,19 +143,18 @@ def get_index_of_value(alist, val):
         :return the tuple (False, None) if the vale does not appear in alist
     """
 
-    cur_index = 0
+    cur_idx = 0
     cur_node = alist['head']
 
     while cur_node is not None:
         if node.get_data(cur_node) == val:
-            return True, cur_index
+            return True, cur_idx
         cur_node = node.get_next(cur_node)
-        cur_index += 1
+        cur_idx += 1
 
     return False, None
 
 
-# TODO: complete  retrieve_data_at_index(alist, idx)   --- when done, delete this line
 def retrieve_data_at_index(alist, idx):
     """
     Purpose
@@ -170,17 +169,18 @@ def retrieve_data_at_index(alist, idx):
         :return (False, None) if the idx is not valid for the list
     """
 
+    #check if target index is within scope of alist
     if alist['size'] - idx < 1:
         return False, None
     else:
-        count = 0
+        cur_idx = 0
         cur_node = alist['head']
 
         while cur_node is not None:
-            if count == idx:
+            if cur_idx == idx:
                 return True, node.get_data(cur_node)
             else:
-                count += 1
+                cur_idx += 1
                 cur_node = node.get_next(cur_node)
 
 
@@ -199,7 +199,21 @@ def set_data_at_index(alist, idx, val):
     Return:
         :return True if the index was valid, False otherwise
     """
-    return False
+
+    cur_node = alist['head']
+    cur_idx = 0
+
+    #check if target index is within scope of alist
+    if alist['size'] - idx < 1:
+        return False
+    else:
+        while cur_node is not None:
+            if cur_idx == idx:
+                node.set_data(cur_node, val)
+                return True
+            else:
+                cur_idx += 1
+                cur_node = node.get_next(cur_node)
 
 
 # TODO: complete remove_from_front(alist)   --- when done, delete this line
