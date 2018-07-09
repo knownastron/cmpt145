@@ -339,6 +339,10 @@ def insert_value_at_index(alist, val, idx):
                 node.set_next(cur_node, new_node)
                 alist['size'] += 1
                 return True
+            else:
+                cur_node = next_node
+                next_node = node.get_next(next_node)
+                next_idx += 1
 
 
 # TODO: complete delete_item_at_index(alist, idx)   --- when done, delete this line
@@ -355,4 +359,43 @@ def delete_item_at_index(alist, idx):
     Return:
         :return True if index was valid, False otherwise
     """
-    return False
+
+    #check if idx is within scope of alist
+    if alist['size'] - idx < 1:
+        return False
+
+    #check if list is empty
+    elif is_empty(alist):
+        return False
+
+    #check if list is a singleton
+    elif alist['size'] == 1:
+        remove_from_front(alist)
+        return True
+
+    #check if idx is the first index
+    elif idx == 0:
+        remove_from_front(alist)
+        return True
+
+    #check if idx is the last index
+    elif alist['size'] - idx == 1:
+        remove_from_back(alist)
+        return True
+
+    #general case
+    else:
+        cur_node = alist['head']
+        next_node = node.get_next(cur_node)
+        next_idx = 1
+
+        while next_node is not None:
+            if next_idx == idx:
+                after_next = node.get_next(next_node)
+                node.set_next(cur_node, after_next)
+                alist['size'] -= 1
+                return True
+            else:
+                cur_node = next_node
+                next_node = node.get_next(next_node)
+                next_idx += 1
