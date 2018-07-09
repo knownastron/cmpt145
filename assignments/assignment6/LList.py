@@ -229,18 +229,22 @@ def remove_from_front(alist):
         :return The tuple (False, None) if alist is empty
     """
 
+    #check if linked list is already EMPTY
     if is_empty(alist):
         return False, None
+
+    #check if linked list is a singleton
     elif size(alist) == 1:
         node_to_remove = alist['head']
-        removed_data = node.get_data(node_to_remove)
+        removed_data = node.get_data(node_to_remove) #data to be removed and returned
         alist['head'] = None
         alist['tail'] = None
         alist['size'] = 0
         return True, removed_data
+
     else:
         node_to_remove = alist['head']
-        removed_data = node.get_data(node_to_remove)
+        removed_data = node.get_data(node_to_remove) #data to be removed and returned
         new_head = node.get_next(node_to_remove)
         alist['head'] = new_head
         alist['size'] -= 1
@@ -261,7 +265,33 @@ def remove_from_back(alist):
         :return The tuple (True, value) if alist is not empty
         :return The tuple (False, None) if alist is empty
     """
-    return False, None
+    #check if linked list is already EMPTY
+    if is_empty(alist):
+        return False, None
+
+    #check if linked list is a singleton
+    elif size(alist) == 1:
+        node_to_remove = alist['head']
+        removed_data = node.get_data(node_to_remove) #data to be removed and returned
+        alist['head'] = None
+        alist['tail'] = None
+        alist['size'] = 0
+        return True, removed_data
+
+    else:
+        cur_node = alist['head']
+        next_node = node.get_next(cur_node)
+
+        while next_node is not None:
+            if next_node == alist['tail']:
+                removed_data = node.get_data(next_node) #data to be removed and returned
+                node.set_next(cur_node, None)
+                alist['tail'] = cur_node
+                alist['size'] -= 1
+                return True, removed_data
+            else:
+                cur_node = next_node
+                next_node = node.get_next(next_node)
 
 
 # TODO: complete insert_value_at_index(alist, val, idx)   --- when done, delete this line
