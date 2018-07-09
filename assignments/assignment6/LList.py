@@ -251,7 +251,7 @@ def remove_from_front(alist):
 
         return True, removed_data
 
-# TODO: complete remove_from_back(alist)   --- when done, delete this line
+
 def remove_from_back(alist):
     """
     Purpose
@@ -279,22 +279,23 @@ def remove_from_back(alist):
         return True, removed_data
 
     else:
-        cur_node = alist['head']
-        next_node = node.get_next(cur_node)
+        prev_node = alist['head']
+        next_node = node.get_next(prev_node)
 
         while next_node is not None:
+            #if next_node is the same as tail, then previous node (prev_node) becomes the new tail
             if next_node == alist['tail']:
                 removed_data = node.get_data(next_node) #data to be removed and returned
-                node.set_next(cur_node, None)
-                alist['tail'] = cur_node
+                node.set_next(prev_node, None)
+                alist['tail'] = prev_node
                 alist['size'] -= 1
                 return True, removed_data
             else:
-                cur_node = next_node
+                prev_node = next_node
                 next_node = node.get_next(next_node)
 
 
-# TODO: complete insert_value_at_index(alist, val, idx)   --- when done, delete this line
+
 def insert_value_at_index(alist, val, idx):
     """
     Purpose
@@ -311,7 +312,34 @@ def insert_value_at_index(alist, val, idx):
         :return If the index is valid, insert_value_at_index returns True.
         :return If the index is not valid, insert_value_at_index returns False.
     """
-    return False
+
+    #check if idx beyond alist['size'] + 1 or idx is negative, return False
+    if alist['size'] - idx < 0 or idx < 0:
+        return False
+
+    #if index is the first index or is empty, add new val at the front
+    if idx == 0 or is_empty(alist):
+        add_to_front(alist, val)
+        return True
+
+    #if index is immediately after the last index of alist, add new val to back
+    elif idx == alist['size']:
+        add_to_back(alist, val)
+        return True
+
+    #general case
+    else:
+        cur_node = alist['head']
+        next_node = node.get_next(cur_node)
+        next_idx = 1 #index of next_node
+
+        while next_node is not None:
+            if next_idx == idx:
+                new_node = node.create(val, next_node)
+                node.set_next(cur_node, new_node)
+                alist['size'] += 1
+                return True
+
 
 # TODO: complete delete_item_at_index(alist, idx)   --- when done, delete this line
 def delete_item_at_index(alist, idx):
