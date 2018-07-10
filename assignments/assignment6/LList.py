@@ -416,6 +416,8 @@ def extend(alist, blist):
     alist['tail'] = blist['tail']
     alist['size'] += blist['size']
 
+    return alist
+
 def slice(alist, start, end, step):
 
     cur_idx = 0
@@ -446,26 +448,50 @@ def sorted(alist):
     next_node = node.get_next(cur_node)
     n = size(alist)
     i = 0
+    count = 1
 
     print('n', n)
     print('i', i)
 
-    while i != n-1:
-        print(node.get_data(cur_node),node.get_data(next_node))
-        if node.get_data(cur_node) > node.get_data(next_node):
+    while i != n-1 or next_node is not None:
+        print('run', count)
+
+        cur_value = node.get_data(cur_node)
+        next_value = node.get_data(next_node)
+
+        if next_value is None:
+            break
+        elif cur_value > next_value:
             if prev_node is None:
-                alist['head'] = next_node
+                print('prev node is none')
                 node.set_next(cur_node, node.get_next(next_node))
+                node.set_next(next_node, cur_node)
+                alist['head'] = next_node
                 i = 0
+
+                holder = cur_node
+                cur_node = next_node
+                next_node = holder
+                print('done prev node is none')
             else:
+                print('prev node is not none')
                 node.set_next(prev_node, next_node)
                 node.set_next(cur_node, node.get_next(next_node))
                 node.set_next(next_node, cur_node)
                 i = 0
+
+                prev_node = None
+                cur_node = alist['head']
+                next_node = node.get_next(cur_node)
+                print('done prev node is not none')
         else:
             prev_node = cur_node
             cur_node = next_node
             next_node = node.get_next(next_node)
             i += 1
+
+        count += 1
+        print(i)
+        print(node.to_string(alist['head']))
 
     return alist
