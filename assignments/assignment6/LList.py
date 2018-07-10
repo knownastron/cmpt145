@@ -450,11 +450,7 @@ def sorted(alist):
     i = 0
     count = 1
 
-    print('n', n)
-    print('i', i)
-
     while i != n-1 or next_node is not None:
-        print('run', count)
 
         cur_value = node.get_data(cur_node)
         next_value = node.get_data(next_node)
@@ -463,35 +459,38 @@ def sorted(alist):
             break
         elif cur_value > next_value:
             if prev_node is None:
-                print('prev node is none')
                 node.set_next(cur_node, node.get_next(next_node))
                 node.set_next(next_node, cur_node)
                 alist['head'] = next_node
                 i = 0
 
-                holder = cur_node
-                cur_node = next_node
-                next_node = holder
-                print('done prev node is none')
+                #if last node changed, change 'tail'
+                if node.get_next(cur_node) is None:
+                    alist['tail'] = cur_node
+
             else:
-                print('prev node is not none')
                 node.set_next(prev_node, next_node)
                 node.set_next(cur_node, node.get_next(next_node))
                 node.set_next(next_node, cur_node)
                 i = 0
 
-                prev_node = None
-                cur_node = alist['head']
-                next_node = node.get_next(cur_node)
-                print('done prev node is not none')
+                #if last node changed, change 'tail'
+                if node.get_next(cur_node) is None:
+                    alist['tail'] = cur_node
+
+            #reset node to beginning of list
+            prev_node = None
+            cur_node = alist['head']
+            next_node = node.get_next(cur_node)
+
+
+
+        #move to next node if cur is not greater than next
         else:
             prev_node = cur_node
             cur_node = next_node
             next_node = node.get_next(next_node)
             i += 1
-
-        count += 1
-        print(i)
         print(node.to_string(alist['head']))
 
     return alist
