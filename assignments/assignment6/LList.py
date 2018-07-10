@@ -1,3 +1,9 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 # CMPT 145: Node-Based Data Structures
 # Defines the Linked List ADT
 #
@@ -78,6 +84,7 @@ def add_to_front(alist, val):
         alist['head'] = new_node
         alist['size'] += 1
 
+
 def add_to_back(alist, val):
     """
     Purpose
@@ -91,7 +98,6 @@ def add_to_back(alist, val):
     Return:
         :return None
     """
-
 
     if size(alist) == 0:
         new_node = node.create(val, None)
@@ -345,7 +351,6 @@ def insert_value_at_index(alist, val, idx):
                 next_idx += 1
 
 
-# TODO: complete delete_item_at_index(alist, idx)   --- when done, delete this line
 def delete_item_at_index(alist, idx):
     """
     Purpose
@@ -360,12 +365,8 @@ def delete_item_at_index(alist, idx):
         :return True if index was valid, False otherwise
     """
 
-    #check if idx is within scope of alist
-    if alist['size'] - idx < 1:
-        return False
-
-    #check if list is empty
-    elif is_empty(alist):
+    #check if idx is within scope of alist or check if alist is empty
+    if alist['size'] - idx < 1 or is_empty(alist):
         return False
 
     #check if list is a singleton
@@ -399,3 +400,39 @@ def delete_item_at_index(alist, idx):
                 cur_node = next_node
                 next_node = node.get_next(next_node)
                 next_idx += 1
+
+###############################################################################
+#No credit functions
+###############################################################################
+
+def clear(alist):
+    alist['head'] = None
+    alist['tail'] = None
+    alist['size'] = 0
+
+def extend(alist, blist):
+    atail = alist['tail']
+    node.set_next(atail, blist['head'])
+    alist['tail'] = blist['tail']
+
+def slice(alist, start, end, step):
+
+    cur_idx = 0
+    target_idx = start
+    cur_node = alist['head']
+    data_list = []
+
+    while cur_idx < end:
+        if cur_idx == target_idx:
+            data_list.append(node.get_data(cur_node))
+            target_idx += step
+        cur_node = node.get_next(cur_node)
+        cur_idx += 1
+
+    new_llist = create()
+    while len(data_list) > 0:
+        add_to_back(new_llist, data_list.pop(0))
+
+    return new_llist
+
+def sorted(alist):
