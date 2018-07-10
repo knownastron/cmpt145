@@ -414,3 +414,23 @@ def extend(alist, blist):
     atail = alist['tail']
     node.set_next(atail, blist['head'])
     alist['tail'] = blist['tail']
+
+def slice(alist, start, end, step):
+
+    cur_idx = 0
+    target_idx = start
+    cur_node = alist['head']
+    data_list = []
+
+    while cur_idx < end:
+        if cur_idx == target_idx:
+            data_list.append(node.get_data(cur_node))
+            target_idx += step
+        cur_node = node.get_next(cur_node)
+        cur_idx += 1
+
+    new_llist = create()
+    while len(data_list) > 0:
+        add_to_back(new_llist, data_list.pop(0))
+
+    return new_llist
