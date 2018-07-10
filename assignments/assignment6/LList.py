@@ -414,6 +414,7 @@ def extend(alist, blist):
     atail = alist['tail']
     node.set_next(atail, blist['head'])
     alist['tail'] = blist['tail']
+    alist['size'] += blist['size']
 
 def slice(alist, start, end, step):
 
@@ -434,3 +435,37 @@ def slice(alist, start, end, step):
         add_to_back(new_llist, data_list.pop(0))
 
     return new_llist
+
+def sorted(alist):
+
+    if is_empty(alist) or size(alist) == 1:
+        return alist
+
+    prev_node = None
+    cur_node = alist['head']
+    next_node = node.get_next(cur_node)
+    n = size(alist)
+    i = 0
+
+    print('n', n)
+    print('i', i)
+
+    while i != n-1:
+        print(node.get_data(cur_node),node.get_data(next_node))
+        if node.get_data(cur_node) > node.get_data(next_node):
+            if prev_node is None:
+                alist['head'] = next_node
+                node.set_next(cur_node, node.get_next(next_node))
+                i = 0
+            else:
+                node.set_next(prev_node, next_node)
+                node.set_next(cur_node, node.get_next(next_node))
+                node.set_next(next_node, cur_node)
+                i = 0
+        else:
+            prev_node = cur_node
+            cur_node = next_node
+            next_node = node.get_next(next_node)
+            i += 1
+
+    return alist
