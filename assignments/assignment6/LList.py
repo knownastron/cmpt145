@@ -457,6 +457,7 @@ def sorted(alist):
 
         if next_value is None:
             break
+
         elif cur_value > next_value:
             if prev_node is None:
                 node.set_next(cur_node, node.get_next(next_node))
@@ -483,14 +484,11 @@ def sorted(alist):
             cur_node = alist['head']
             next_node = node.get_next(cur_node)
 
-
-
         #move to next node if cur is not greater than next
         else:
             prev_node = cur_node
             cur_node = next_node
             next_node = node.get_next(next_node)
             i += 1
-        print(node.to_string(alist['head']))
 
     return alist
