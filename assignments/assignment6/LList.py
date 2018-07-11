@@ -111,7 +111,7 @@ def add_to_back(alist, val):
         node.set_next(cur_last_node, new_node)
         alist['tail'] = new_node
         alist['size'] += 1
-
+    return None
 
 def value_is_in(alist, val):
     """
