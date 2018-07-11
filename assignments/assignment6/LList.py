@@ -449,7 +449,7 @@ def extend(alist, blist):
         alist['size'] += blist['size']
 
 
-def slice(alist, start, end, step=None):
+def slice(alist, start, end, step=1):
     """
     Purpose
         creates a new list of nodes from index start to index end
@@ -489,9 +489,9 @@ def sorted(alist):
     Preconditions:
         :param alist: a list created by create()
     Post-conditions:
-        None
+        alist is rearranged in increasing order
     Return:
-        alist in increasing order
+        None
     """
     new_llist = create()
     for i in range(size(alist)):
@@ -509,4 +509,10 @@ def sorted(alist):
                 cur_node = node.get_next(cur_node)
         add_to_back(new_llist, small_val)
         delete_item_at_index(alist, small_idx)
-    extend(alist, new_llist)
+
+    #add back every value to alist in increasing order
+    cur_node = new_llist['head']
+    while cur_node is not None:
+        cur_val = node.get_data(cur_node)
+        add_to_back(alist, cur_val)
+        cur_node = node.get_next(cur_node)
