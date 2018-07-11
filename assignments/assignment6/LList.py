@@ -440,56 +440,21 @@ def slice(alist, start, end, step):
     return new_llist
 
 def sorted(alist):
-
-    if is_empty(alist) or size(alist) == 1:
-        return alist
-
-    prev_node = None
-    cur_node = alist['head']
-    next_node = node.get_next(cur_node)
-    n = size(alist)
-    i = 0
-    count = 1
-
-    while i != n-1 or next_node is not None:
-
-        cur_value = node.get_data(cur_node)
-        next_value = node.get_data(next_node)
-
-        if next_value is None:
-            break
-
-        elif cur_value > next_value:
-            if prev_node is None:
-                node.set_next(cur_node, node.get_next(next_node))
-                node.set_next(next_node, cur_node)
-                alist['head'] = next_node
-                i = 0
-
-                #if last node changed, change 'tail'
-                if node.get_next(cur_node) is None:
-                    alist['tail'] = cur_node
-
+    
+    new_llist = create()
+    for i in range(size(alist)):
+        small_idx = None
+        small_val = None
+        cur_node = alist['head']
+        cur_idx = 0
+        while cur_node is not None:
+            cur_val = node.get_data(cur_node)
+            if small_idx is None or cur_val < small_val:
+                small_idx = cur_idx
+                small_val = cur_val
             else:
-                node.set_next(prev_node, next_node)
-                node.set_next(cur_node, node.get_next(next_node))
-                node.set_next(next_node, cur_node)
-                i = 0
-
-                #if last node changed, change 'tail'
-                if node.get_next(cur_node) is None:
-                    alist['tail'] = cur_node
-
-            #reset node to beginning of list
-            prev_node = None
-            cur_node = alist['head']
-            next_node = node.get_next(cur_node)
-
-        #move to next node if cur is not greater than next
-        else:
-            prev_node = cur_node
-            cur_node = next_node
-            next_node = node.get_next(next_node)
-            i += 1
-
-    return alist
+                cur_idx += 1
+                cur_node = node.get_next(cur_node)
+        add_to_back(new_llist, small_val)
+        delete_item_at_index(alist, small_idx)
+    return new_llist
