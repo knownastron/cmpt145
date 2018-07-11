@@ -436,6 +436,7 @@ def extend(alist, blist):
     Return:
         None
     """
+    
     if is_empty(alist) and is_empty(blist):
         pass
     elif is_empty(alist):
@@ -464,6 +465,7 @@ def slice(alist, start, end, step=1):
     Return:
         :new_llist: a new list
     """
+
     cur_idx = 0
     target_idx = start
     cur_node = alist['head']
@@ -493,6 +495,7 @@ def sorted(alist):
     Return:
         None
     """
+
     new_llist = create()
     for i in range(size(alist)):
         small_idx = None
