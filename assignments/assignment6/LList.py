@@ -407,20 +407,63 @@ def delete_item_at_index(alist, idx):
 ###############################################################################
 
 def clear(alist):
+    """
+    Purpose
+        delete all values from a linked list
+    Preconditions:
+        :param alist: a list created by create()
+    Post-conditions:
+        The list head and tail are both None
+        The list size is 0
+    Return:
+        alist
+    """
     alist['head'] = None
     alist['tail'] = None
     alist['size'] = 0
 
 def extend(alist, blist):
-    atail = alist['tail']
-    node.set_next(atail, blist['head'])
-    alist['tail'] = blist['tail']
-    alist['size'] += blist['size']
+    """
+    Purpose
+        append all the nodes in blist on the end of alist
+    Preconditions:
+        :param alist: a list created by create()
+        :param blist: a list created by create()
+    Post-conditions:
+        alist has all the nodes of blist appended to it
+        alist's tail is the same as blist's tail
+        alist's size = alist's size + blist's size
+    Return:
+        None
+    """
+    if is_empty(alist) and is_empty(blist):
+        pass
+    elif is_empty(alist):
+        alist = blist
+    elif is_empty(blist):
+        pass
+    else:
+        atail = alist['tail']
+        node.set_next(atail, blist['head'])
+        alist['tail'] = blist['tail']
+        alist['size'] += blist['size']
 
-    return alist
 
-def slice(alist, start, end, step):
-
+def slice(alist, start, end, step=None):
+    """
+    Purpose
+        creates a new list of nodes from index start to index end
+        selecting each node index start + i * step
+    Preconditions:
+        :param alist: a list created by create()
+        :param start: integer of desired start
+        :param end: integer of desired end
+        :param step: integer of desired step or None if empty
+    Post-conditions:
+        None
+    Return:
+        :new_llist: a new list
+    """
     cur_idx = 0
     target_idx = start
     cur_node = alist['head']
@@ -440,7 +483,16 @@ def slice(alist, start, end, step):
     return new_llist
 
 def sorted(alist):
-    
+    """
+    Purpose
+        sort alist in increasing order
+    Preconditions:
+        :param alist: a list created by create()
+    Post-conditions:
+        None
+    Return:
+        alist in increasing order
+    """
     new_llist = create()
     for i in range(size(alist)):
         small_idx = None
@@ -457,4 +509,4 @@ def sorted(alist):
                 cur_node = node.get_next(cur_node)
         add_to_back(new_llist, small_val)
         delete_item_at_index(alist, small_idx)
-    return new_llist
+    extend(alist, new_llist)
