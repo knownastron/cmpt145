@@ -1,0 +1,162 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+assignment6 $ git --no-pager log
+commit 6d93d46b7196d22cdb81b06f0edc0399b3e14bb4 (HEAD -> master, origin/master)
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 19:54:23 2018 -0600
+
+    added docString for extra work functions
+
+commit 85ea21694b1d8fd1a833ab78803b1e53f1420ac0
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 19:51:14 2018 -0600
+
+    sorted() now does not return, but changes the input llist
+
+commit e87dbb761291344867bf661044147a6d3a399b4e
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 19:36:32 2018 -0600
+
+    add corner cases to extend()
+
+commit 657cc3542ab96945f847a1b8159301e3c524cd36
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 19:06:13 2018 -0600
+
+    changed sorted() into an selection sort
+
+commit 3532a9a008dc8df3af6327df8d691f2e9553a5ac
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 18:31:26 2018 -0600
+
+    add return statement to add_to_back()
+
+commit f14f5dcb2766c9b73529d140a787448546e576f7
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 18:30:52 2018 -0600
+
+    add return statement to add_to_front()
+
+commit 400b9434b3b11854fb6355bf7559c17a85e475d0
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 15:08:13 2018 -0600
+
+    removed print at end of the loop
+
+commit 4d6bc7467ca186336461ea2bbf04d47f1175452b
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 15:02:28 2018 -0600
+
+    add change tail if last node is changed and improved reset of nodes
+
+commit a98b5b88071b5a83588519c3c875d8b57abda98a
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 14:53:04 2018 -0600
+
+    implement sorted() but requires more testing
+
+commit 01aad4d0657990e7077f6e34b45b69009b842bc4
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 14:17:18 2018 -0600
+
+    fix extend to change size of alist by adding size of blist
+
+commit 812f31207094cfb24580584813592a6615f4f403
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 11:52:21 2018 -0600
+
+    implement slice()
+
+commit ae17229f33b2033d0c5f808e2f9e306f50115f2b
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 11:51:59 2018 -0600
+
+    implement extend()
+
+commit 1c453f7a674e77b9cce4f3bb77750d1085aff2ba
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 10 11:51:30 2018 -0600
+
+    implement clear()
+
+commit 0e2c02788b086632d5a10709174e4c32c8cc4837
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 22:10:23 2018 -0600
+
+    fix infinite loop on insert_value_at_index() and implement delete_item_at_index()
+
+commit ea302c5a00cf368e5cb1eb87a7f412f51a5b7405
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 21:52:03 2018 -0600
+
+    implement insert_value_at_index()
+
+commit ac50b83c58c3b02e39d8de3c6da9bd999ff56b37
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 21:32:00 2018 -0600
+
+    implement remove_from_back()
+
+commit d4f144e72d5f53e7f485df961b222fc74c6c380c
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 16:33:20 2018 -0600
+
+    implement remove_from_front()
+
+commit 297abeef4b77a8fa640b0d4cc4a74d3a3d536d76
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 16:24:15 2018 -0600
+
+    implement set_data_at_index
+
+commit 36a75077e5dd0fc1b412bb716e996196b2cb4c80
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 16:09:22 2018 -0600
+
+    implement retrieve_data_at_index()
+
+commit 6e15a877e600331be35816034ded0a609ca33643
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 16:03:30 2018 -0600
+
+    implement get_index_of_value()
+
+commit 525f8e579788bc6ae66af4bd3909493a5cb68d57
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 15:57:21 2018 -0600
+
+    implement value_is_in()
+
+commit 7070b2d25e67e2a2d29da4333fd7ba675248b011
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 15:54:44 2018 -0600
+
+    implement add_to_back
+
+commit 9c27aa2066982f9058c6a3d263812025eab16543
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 15:51:05 2018 -0600
+
+    implement add_to_front()
+
+commit 6e996698593f2a223c8478448e59857e3094b40a
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 15:40:03 2018 -0600
+
+    implement is_empty()
+
+commit 1d056bb50cf09226d73b6f39497dd1d888ed4f8d
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 15:39:20 2018 -0600
+
+    implement size()
+
+commit 76c1cbce6d7756c3ffa05766918159698d095c05
+Author: knownastron <knownastron@gmail.com>
+Date:   Sun Jul 8 14:59:14 2018 -0600
+
+    initial commit

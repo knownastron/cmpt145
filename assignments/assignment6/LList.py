@@ -290,7 +290,7 @@ def remove_from_back(alist):
         next_node = node.get_next(prev_node)
 
         while next_node is not None:
-            #if next_node is the same as tail, then previous node (prev_node) becomes the new tail
+            #if next_node is the same as tail, then prev_node becomes the new tail
             if next_node == alist['tail']:
                 removed_data = node.get_data(next_node) #data to be removed and returned
                 node.set_next(prev_node, None)
@@ -436,7 +436,7 @@ def extend(alist, blist):
     Return:
         None
     """
-    
+
     if is_empty(alist) and is_empty(blist):
         pass
     elif is_empty(alist):

@@ -1,3 +1,9 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
 # CMPT 145: Node-Based Data Structures
 #   Linked List ADT scoring script
 #
@@ -80,11 +86,11 @@ def final_report(counter):
 ###############################################################################################
 
 test_counter = createCounter('Linked List ADT:')
-# SUGGESTION: 
+# SUGGESTION:
 #   -set limit to 10 errors as you are working; keeps output focussed
-#   -set limit to 0 (default, meaning "attempt all tests") 
+#   -set limit to 0 (default, meaning "attempt all tests")
 #    when you're close to done
-# set_limit(test_counter, 10)
+#set_limit(test_counter, 10)
 
 ###############################################################################################
 reason = 'create() unit test'
