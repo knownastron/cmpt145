@@ -83,6 +83,7 @@ def add_to_front(alist, val):
         new_node = node.create(val, alist['head'])
         alist['head'] = new_node
         alist['size'] += 1
+    return None
 
 
 def add_to_back(alist, val):
