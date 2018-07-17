@@ -7,9 +7,11 @@
 def fib(n):
     """
     Purpose:
+        get the nth number of the fibonacci sequence
     Pre-condition:
-    Post-condition:
+        :param n: a positive integer
     return:
+        an integer representing the nth number of teh fibonacci sequence
     """
     if n == 0:
         return 0
@@ -22,9 +24,11 @@ def fib(n):
 def moos(n):
     """
     Purpose:
+        get the nth number of the Moosonacci sequence
     Pre-condition:
-    Post-condition:
+        :param n: a positive integer
     return:
+        an integer representing the nth number of teh Moosonacci sequence
     """
     if n == 0:
         return 0
