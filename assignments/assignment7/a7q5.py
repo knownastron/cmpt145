@@ -43,9 +43,14 @@ def moos(n):
 def substr(old, new, string):
     """
     Purpose:
+        replace all instances of the old letter with the new letter in the
+        input string
     Pre-condition:
-    Post-condition:
+        :param old: a string character of desired target character in string
+        :param new: a string character of desired replacement character in string
+        :param string: a string
     return:
+        a new string with all instances of old replaced with new
     """
 
     new_string = "";
