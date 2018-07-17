@@ -6,7 +6,10 @@
 
 def fib(n):
     """
-
+    Purpose:
+    Pre-condition:
+    Post-condition:
+    return:
     """
     if n == 0:
         return 0
@@ -15,7 +18,14 @@ def fib(n):
     else:
         return fib(n-1) + fib(n-2)
 
+
 def moos(n):
+    """
+    Purpose:
+    Pre-condition:
+    Post-condition:
+    return:
+    """
     if n == 0:
         return 0
     elif n == 1:
@@ -28,7 +38,10 @@ def moos(n):
 
 def substr(old, new, string):
     """
-
+    Purpose:
+    Pre-condition:
+    Post-condition:
+    return:
     """
 
     new_string = "";
