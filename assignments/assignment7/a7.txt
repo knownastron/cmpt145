@@ -1,0 +1,35 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+Question 1
+
+Q1. O(2^N)
+Q2. O(N^4)
+Q3. O(N!)
+Q4. O(N^2)
+Q5. O(N^4.123)
+
+
+Question 2
+
+Q1. O(N)
+Q2. O(N^2)
+Q3. O(NM)
+Q4. O(NM!)
+
+Question 3
+
+(a) O(N^2) because the first loop executes n times, and the while loop executes n more times. Therefore N * N = N^2
+(b) O(N^2) because the while j < i loop runs 1 + 2 + 3 + ... + n = (n(n+1))/2 times. The largest N in that equation is N^2.
+(c) O(NlogN) because the while j loop increments by j * 2 so that loop is log(N). That loop gets run N times because of the for loop. Therefore log(N) * N = NlogN
+
+Question 4. 
+
+Best case: O(1) if the cases' status is closed, simply append it to closed_cases and return. 
+Worst case: O(NM). If N = size of case["keyword"] and M = size of closed_cases. Then if case["status"] is not "Closed" the inner loop runs M times for a run time of O(M). This inner loop is ran N times. Therefore N * O(M) = O(NM).
+
+
+
