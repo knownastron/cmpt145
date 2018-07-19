@@ -43,7 +43,7 @@ def reverse_chain(node_chain, prev_node=None):
         return reverse_chain(next, node_chain)
 
 
-def copy(node_chain):
+def copy(node_chain, new_chain=None, head=None):
     """
     Purpose:
         Create a new node-chain
@@ -52,7 +52,22 @@ def copy(node_chain):
     return:
         :return: a seperate distinct chain that has the same values as node-chain
     """
-    pass
+
+    if node_chain is None:
+        node.set_next(new_chain, None)
+        return head
+    else:
+        value = node.get_data(node_chain)
+        if new_chain is None:
+            new_chain = node.create(value, None)
+            head = new_chain
+            return copy(node.get_next(node_chain), new_chain, head)
+        else:
+            node.set_next(new_chain, node.create(value))
+            print(new_chain)
+            return copy(node.get_next(node_chain), node.get_next(new_chain), head)
+
+
 
 
 
@@ -63,4 +78,4 @@ if __name__ == '__main__':
         several_node = node.create(i, several_node)
 
     print(node.to_string(several_node))
-    print(node.to_string(reverse_chain(several_node)))
+    print(node.to_string(copy(several_node)))
