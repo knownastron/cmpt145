@@ -70,8 +70,6 @@ def copy(node_chain, new_chain=None, head=None):
 
 
 
-
-
 if __name__ == '__main__':
     several_node = node.create(0)
     for i in range(1,5):
