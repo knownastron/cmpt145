@@ -54,6 +54,8 @@ def copy(node_chain, new_chain=None, head=None):
     """
 
     if node_chain is None:
+        if new_chain is None:
+            return None
         node.set_next(new_chain, None)
         return head
     else:
@@ -64,7 +66,6 @@ def copy(node_chain, new_chain=None, head=None):
             return copy(node.get_next(node_chain), new_chain, head)
         else:
             node.set_next(new_chain, node.create(value))
-            print(new_chain)
             return copy(node.get_next(node_chain), node.get_next(new_chain), head)
 
 
