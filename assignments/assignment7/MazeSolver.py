@@ -26,23 +26,20 @@ def MazeSolver(m, s, g):
         east, south, west, north = False, False, False, False
 
 
-
+        m[s[0]][s[1]] = 'P'
         if s[0] != 0:
-            m[s[0]][s[1]] = 'P'
             new_n = (s[0] - 1, s[1])
             if m[new_n[0]][new_n[1]] != 'P':
                 north = MazeSolver(m, new_n, g)
             else:
                 pass
         if s[0] + 1 != len(m):
-            m[s[0]][s[1]] = 'P'
             new_s = (s[0] + 1, s[1])
             if m[new_s[0]][new_s[1]] != 'P':
                 south = MazeSolver(m, new_s, g)
             else:
                 pass
         if s[1] + 1 !=  len(m[0]):
-            m[s[0]][s[1]] = 'P'
             new_e = (s[0], s[1]+1)
             if m[new_e[0]][new_e[1]] != 'P':
                 east = MazeSolver(m, new_e, g)
@@ -55,7 +52,8 @@ def MazeSolver(m, s, g):
             else:
                 pass
 
-
+        if east == False and south == False and west == False and north == False :
+            m[s[0]][s[1]] = '0'
         return east or south or west or north
 
 
