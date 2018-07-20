@@ -13,18 +13,13 @@ def get_maze(maze_name):
 
 def MazeSolver(m, s, g):
     val = m[s[0]][s[1]]
-    print('val', val)
-    print(s)
     if val == '0' and s == g:
-        print('first base')
         m[s[0]][s[1]] = 'P'
         return True
     elif val == '1':
-        print('second base')
         return False
     else:
         east, south, west, north = False, False, False, False
-
 
         m[s[0]][s[1]] = 'P'
         if s[0] != 0:
@@ -52,7 +47,7 @@ def MazeSolver(m, s, g):
             else:
                 pass
 
-        if east == False and south == False and west == False and north == False :
+        if east == False and south == False and west == False and north == False:
             m[s[0]][s[1]] = '0'
         return east or south or west or north
 
@@ -68,11 +63,11 @@ maze2_name = 'maze2.txt'
 maze3_name = 'maze3.txt'
 muhmaze_name = 'muhmaze.txt'
 
-muhmaze = get_maze(muhmaze_name)
+muhmaze = get_maze(maze3_name)
 
 
 print_maze(muhmaze)
-print(MazeSolver(muhmaze, (0,0), (2,1)))
+print(MazeSolver(muhmaze, (3,0), (23,30)))
 print_maze(muhmaze)
 # print(maze1[s[0]][s[1]])
 # print(maze1[s[0]][s[1]+1])
