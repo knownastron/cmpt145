@@ -67,14 +67,3 @@ def copy(node_chain, new_chain=None, head=None):
         else:
             node.set_next(new_chain, node.create(value))
             return copy(node.get_next(node_chain), node.get_next(new_chain), head)
-
-
-
-
-if __name__ == '__main__':
-    several_node = node.create(0)
-    for i in range(1,5):
-        several_node = node.create(i, several_node)
-
-    print(node.to_string(several_node))
-    print(node.to_string(copy(several_node)))

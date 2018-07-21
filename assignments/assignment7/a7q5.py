@@ -13,6 +13,8 @@ def fib(n):
     return:
         an integer representing the nth number of teh fibonacci sequence
     """
+    
+    assert (n >= 0), 'n must be a positive number'
     if n == 0:
         return 0
     elif n == 1:
@@ -30,6 +32,8 @@ def moos(n):
     return:
         an integer representing the nth number of teh Moosonacci sequence
     """
+
+    assert (n >= 0), 'n must be a positive number'
     if n == 0:
         return 0
     elif n == 1:
@@ -61,7 +65,3 @@ def substr(old, new, string):
     else:
         new_string += string[0]
     return new_string + substr(old, new, string[1:])
-
-
-for i in range(11):
-    print(moos(i))

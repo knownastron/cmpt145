@@ -6,30 +6,29 @@
 
 Question 1
 
-Q1. O(2^N)
-Q2. O(N^4)
-Q3. O(N!)
-Q4. O(N^2)
-Q5. O(N^4.123)
+Q1. O(2^n)
+Q2. O(n^4)
+Q3. O(n!)
+Q4. O(n^2)
+Q5. O(n^4.123)
 
 
 Question 2
 
-Q1. O(N)
-Q2. O(N^2)
-Q3. O(NM)
-Q4. O(NM!)
+Q1. O(n)
+Q2. O(n^2)
+Q3. O(nm)
+Q4. O(nm!)
 
 Question 3
 
-(a) O(N^2) because the first loop executes n times, and the while loop executes n more times. Therefore N * N = N^2
-(b) O(N^2) because the while j < i loop runs 1 + 2 + 3 + ... + n = (n(n+1))/2 times. The largest N in that equation is N^2.
-(c) O(NlogN) because the while j loop increments by j * 2 so that loop is log(N). That loop gets run N times because of the for loop. Therefore log(N) * N = NlogN
+(a) O(n^2) because the first loop executes n times, and the while loop executes n more times. Therefore n * n = n^2
+(b) O(n^2) because the while j < i loop runs 1 + 2 + 3 + ... + n = (n(n+1))/2 times. The largest n in that equation is n^2.
+(c) O(nlogn) because the while j loop increments by j * 2 so that loop is log(n). That loop gets run n times because of the for loop. Therefore log(n) * n = nlogn
 
-Question 4. 
+Question 4.
 
-Best case: O(1) if the cases' status is closed, simply append it to closed_cases and return. 
-Worst case: O(NM). If N = size of case["keyword"] and M = size of closed_cases. Then if case["status"] is not "Closed" the inner loop runs M times for a run time of O(M). This inner loop is ran N times. Therefore N * O(M) = O(NM).
+Best case: O(1) if the cases' status is closed, simply append it to closed_cases and return.
+Worst case: O(nm). If n = size of case["keyword"] and m = size of closed_cases. Then if case["status"] is not "Closed" the inner loop runs m times for a run time of O(m). This inner loop is ran n times. Therefore n * O(m) = O(nm).
 
-
-
+JUSTICE-ification: This statement is ONLY correct in the best case scenario! When we are discussing big O notation, it is understood to represent the worst case scenario. Therefore he is WRONG!
