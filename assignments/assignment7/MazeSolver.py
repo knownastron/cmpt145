@@ -24,6 +24,8 @@ def get_maze(maze_name):
         maze.append(line.split())
     return maze
 
+
+
 def MazeSolver(m, s, g):
     """
     Purpose:
@@ -32,6 +34,10 @@ def MazeSolver(m, s, g):
     Pre-conditions:
         :param m: a list of lists where each element in the inner list is a '1'
                   or '0'
+        :param s: a tuple that represents the (x, y) coordinate of the starting
+                  position
+        :param g: a tuple that represents the (x, y) coordinate of the goal
+                  position
     Post-condition:
         if a path is found from start to goal, the path taken will replace '0'
         with 'P'
@@ -41,67 +47,75 @@ def MazeSolver(m, s, g):
     val = m[s[0]][s[1]]
     if val == '0' and s == g:
         m[s[0]][s[1]] = 'P'
+        #print the maze if g is reached
         print_maze(m)
         return True
+
     elif val == '1':
         return False
+
     else:
         east, south, west, north = False, False, False, False
         found_path = east or south or west or north
 
         m[s[0]][s[1]] = 'P'
 
-        if s[0] != 0 and found_path == False:
-            new_n = (s[0] - 1, s[1])
-            if m[new_n[0]][new_n[1]] != 'P':
+        if s[0] != 0 and found_path == False: #check if path is already found
+            new_n = (s[0] - 1, s[1]) #the new coordinates north of current location
+            if m[new_n[0]][new_n[1]] != 'P': #check if new coordinates is already on the path
                 north = MazeSolver(m, new_n, g)
             else:
                 pass
-        if s[1] != 0 and found_path == False:
-            new_w = (s[0], s[1]-1)
-            if m[new_w[0]][new_w[1]] != 'P':
+        if s[1] != 0 and found_path == False: #check if path is already found
+            new_w = (s[0], s[1]-1) #the new coordinates west of current location
+            if m[new_w[0]][new_w[1]] != 'P': #check if new coordinates is already on the path
                 west = MazeSolver(m, new_w, g)
             else:
                 pass
-        if s[0] + 1 != len(m) and found_path == False:
-            new_s = (s[0] + 1, s[1])
-            if m[new_s[0]][new_s[1]] != 'P':
+        if s[0] + 1 != len(m) and found_path == False: #check if path is already found
+            new_s = (s[0] + 1, s[1]) #the new coordinates south of current location
+            if m[new_s[0]][new_s[1]] != 'P': #check if new coordinates is already on the path
                 south = MazeSolver(m, new_s, g)
             else:
                 pass
-        if s[1] + 1 !=  len(m[0]) and found_path == False:
-            new_e = (s[0], s[1]+1)
-            if m[new_e[0]][new_e[1]] != 'P':
+        if s[1] + 1 !=  len(m[0]) and found_path == False: #check if path is already found
+            new_e = (s[0], s[1]+1) #the east coordinates west of current location
+            if m[new_e[0]][new_e[1]] != 'P': #check if new coordinates is already on the path
                 east = MazeSolver(m, new_e, g)
             else:
                 pass
 
 
-
+        #if current location does not on the way to g, set it back to '0'
         if east == False and south == False and west == False and north == False:
             m[s[0]][s[1]] = '0'
         return east or south or west or north
 
 
-
-
 def print_maze(maze):
+    """
+    Purpose: prints out the input maze, each row on a seperate line
+    Pre-conditions:
+        :param maze: a list of lists where each element in the inner list is a '1'
+                     or '0'
+    return:
+        None
+    """
     for line in maze:
         print(line)
 
-maze1_name = 'maze1.txt'
-maze2_name = 'maze2.txt'
-maze3_name = 'maze3.txt'
-muhmaze_name = 'muhmaze.txt'
-
-muhmaze = get_maze(muhmaze_name)
-
-
-# print_maze(muhmaze)
-# print('ya')
-print(MazeSolver(muhmaze, (0, 0), (4, 7)))
-# print_maze(muhmaze)
-# print(maze1[s[0]][s[1]])
-# print(maze1[s[0]][s[1]+1])
-# print(s[1]+1)
-# print(maze1[s[0]][s[1]+1])
+# if __name__ == '__main__':
+#     print('Maze 1')
+#     s, g = (0, 3), (4,5)
+#     maze1 = get_maze('maze1.txt')
+#     print(MazeSolver(maze1, s, g))
+#
+#     print('Maze 2')
+#     s, g = (0,0), (8,9)
+#     maze1 = get_maze('maze2.txt')
+#     print(MazeSolver(maze1, s, g))
+#
+#     print('Maze 3')
+#     s, g = (3,0), (23,30)
+#     maze1 = get_maze('maze3.txt')
+#     print(MazeSolver(maze1, s, g))
