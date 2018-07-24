@@ -1,0 +1,126 @@
+#Name: Jason Tran
+#NSID: jat687
+#Student Number: 11101081
+#Course: CMPT 145-01
+#Lab: L03
+
+assignments $ git --no-pager log
+commit 5a867506a087b77a6d4a328c977344b48d4661c6 (HEAD -> master, origin/master, origin/HEAD)
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 21:29:17 2018 -0600
+
+    ready for hand in
+
+commit be648dcc90caf43c1ff7501b965682775bf5a421
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 21:28:29 2018 -0600
+
+    fix docstring on MazeSolver()
+
+commit ebc566ba425941838e92c5bdde0f574b8c065f6b
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 17:03:39 2018 -0600
+
+    add docstring to all functions
+
+commit 95011e0a0b48b3e486bce89ade0f16067128587e
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 01:43:43 2018 -0600
+
+    removed print statements
+
+commit 35b55a1c8724a782b9ded6c836196c791e9dd8d9
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 01:40:26 2018 -0600
+
+    implement MazeSolver() with correct 'P'
+
+commit 6a1e427a90838bac62b9da72065ad53ba856e210
+Author: knownastron <knownastron@gmail.com>
+Date:   Fri Jul 20 01:38:09 2018 -0600
+
+    implement working MazeSolver but 'P' is not correct
+
+commit 07edf2ad8f9154efa7c62b1c48db0bdc192a275c
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jul 19 22:10:54 2018 -0600
+
+    MazeSolver.py initial commit
+
+commit 2dc689df510ebe2eb6cb81c17fe3e66e48d7a6ec
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jul 19 13:14:07 2018 -0600
+
+    cosmetic changes
+
+commit f95c73c24891d8d00da8370a64a9a8f734e212bb
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jul 19 13:08:02 2018 -0600
+
+    implement test_copy
+
+commit b8beedc8c16e9274da339e86839961bf8c00069d
+Author: knownastron <knownastron@gmail.com>
+Date:   Thu Jul 19 12:24:41 2018 -0600
+
+    implement test_average and test_reverse()
+
+commit 1312245d2994e45015671cd81e2cee61410cd9fa
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jul 18 21:54:32 2018 -0600
+
+    implement reverse_chain()
+
+commit 52ada51871f79ad0470fee4c5a302cd9a4788194
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jul 18 21:53:31 2018 -0600
+
+    implement copy()
+
+commit 6ba8d21250d700bafd46dbec0fb54d0fd934cbfb
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jul 18 21:21:13 2018 -0600
+
+    implement average()
+
+commit 7eccdc232cf9a14e036547530c12a1b9ef091424
+Author: knownastron <knownastron@gmail.com>
+Date:   Wed Jul 18 20:04:19 2018 -0600
+
+    added docstring for average(), reverse_chain() and copy()
+
+commit cb3bfee0fa47cac1e1ffb2682ae570762f2b3f8b
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 17 11:45:49 2018 -0600
+
+    add docstring for substr()
+
+commit b1a7dd6bdc02ad116f25086a1aea88408dded37d
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 17 11:39:51 2018 -0600
+
+    add docstring for fib() and mooc()
+
+commit 4f72e074605d944ea6251c68bbdfdb0e5e63b9bc
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 17 11:29:39 2018 -0600
+
+    implement substr()
+
+commit a40fee2a8f2d4f6f191b0db32e69ab5f486d98f3
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 17 11:28:01 2018 -0600
+
+    implement moos()
+
+commit 2e77a8015f0378dbcc779ae71753c17eb05871e3
+Author: knownastron <knownastron@gmail.com>
+Date:   Tue Jul 17 11:05:57 2018 -0600
+
+    implement fib()
+
+commit 290e3f3937a500cc1b62ffccead0535aa12f3313
+Author: knownastron <knownastron@gmail.com>
+Date:   Mon Jul 16 22:11:53 2018 -0600
+
+    initial commit

@@ -4,27 +4,30 @@
 #Course: CMPT 145-01
 #Lab: L03
 
+
 Question 1
 
-Q1. O(2^n)
-Q2. O(n^4)
-Q3. O(n!)
-Q4. O(n^2)
-Q5. O(n^4.123)
+Q1. f(n) = O(2^n)
+Q2. f(n) = O(n^4)
+Q3. f(n) = O(n!)
+Q4. f(n) = O(n^3log(n))
+Q5. f(n) = O(n^4.123)
 
 
 Question 2
 
-Q1. O(n)
-Q2. O(n^2)
-Q3. O(nm)
-Q4. O(nm!)
+Q1. f(n) = O(n)
+Q2. f(n) = O(n^2)
+Q3. f(n) = O(nm)
+Q4. f(n) = O(nm!)
+
 
 Question 3
 
 (a) O(n^2) because the first loop executes n times, and the while loop executes n more times. Therefore n * n = n^2
 (b) O(n^2) because the while j < i loop runs 1 + 2 + 3 + ... + n = (n(n+1))/2 times. The largest n in that equation is n^2.
 (c) O(nlogn) because the while j loop increments by j * 2 so that loop is log(n). That loop gets run n times because of the for loop. Therefore log(n) * n = nlogn
+
 
 Question 4.
 
