@@ -1,6 +1,6 @@
 #Name: Jason Tran
 #NSID: jat687
-#Student Number: 11101081
+#Student Number: 1101081
 #Course: CMPT 145-01
 #Lab: L03
 
@@ -8,22 +8,23 @@ import treenode as tn
 import treefunctions as tf
 import exampletrees as extree
 
-def count_node_types(tnode, counter=(0,0)):
+def count_node_types(tnode):
     """
     Purpose:
         Returns a tuple containing the number of leaf nodes in the tree,
         and the number of non-leaf nodes in the tree.
     """
     if tnode is None:
-        return counter
+        return 0,0
     else:
-        left = count_node_types(tn.get_left(tnode), counter)
-        right = count_node_types(tn.get_right(tnode), counter)
+        left = count_node_types(tn.get_left(tnode))
+        right = count_node_types(tn.get_right(tnode))
         if tf.is_leaf(tnode):
-            counter = (counter[0] + 1, counter[1])
+            return (1 + left[0] + right[0], 0 + left[1] + right[1])
         else:
-            counter = (counter[0], counter[1] + 1)
-        return (counter[0] + left[0] + right[0], counter[1] + left[1] + right[1])
+            return (0 + left[0] + right[0], 1 + left[1] + right[1])
+
+
 
 
 
@@ -63,13 +64,32 @@ def alter_subtrees(tnode, left_tree_offset, right_tree_offset, root_offset=0):
         return
     else:
         cur_val = tn.get_data(tnode)
-        tn.set_data(cur_val + root_offset)
-        alter_substrees(tn.get_left(tnode), left_tree_offset, right_tree_offset, root_offset + left_tree_offset)
+        tn.set_data(tnode, cur_val + root_offset)
+        alter_subtrees(tn.get_left(tnode), left_tree_offset, right_tree_offset, root_offset + left_tree_offset)
         alter_subtrees(tn.get_right(tnode), left_tree_offset, right_tree_offset, root_offset + right_tree_offset)
         return
+
+
 ###############################################################################
+if __name__ == '__main__':
+    expr_tree = extree.fibonatree
+    fibTree = extree.fibonatree
+    my_tree = tn.create(0,
+                tn.create(0,
+                    tn.create(0,
+                        tn.create(0),
+                        tn.create(0)),
+                    tn.create(0,
+                        tn.create(0),
+                        tn.create(0))),
+                tn.create(0,
+                    tn.create(0,
+                        tn.create(0),
+                        tn.create(0)),
+                    tn.create(0,
+                        tn.create(0),
+                        tn.create(0))))
 
-my_tree = tn.create(10, tn.create(5), tn.create(15))
-
-print(my_tree)
-print('result', alter_subtrees(my_tree, 1, -1))
+    muh_tree = tn.create(1)
+    print(tf.to_string(expr_tree))
+    print(count_node_types(expr_tree))
