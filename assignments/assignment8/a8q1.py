@@ -54,9 +54,22 @@ def collect_data_inorder(tnode):
         return collect_data_inorder(tn.get_left(tnode)) + [tn.get_data(tnode)] \
                + collect_data_inorder(tn.get_right(tnode))
 
+def alter_subtrees(tnode, left_tree_offset, right_tree_offset, root_offset=0):
+    """
+    Purpose: Adds the given offsets to the data values of each subtree
+             (and current root).
+    """
+    if tnode is None:
+        return
+    else:
+        cur_val = tn.get_data(tnode)
+        tn.set_data(cur_val + root_offset)
+        alter_substrees(tn.get_left(tnode), left_tree_offset, right_tree_offset, root_offset + left_tree_offset)
+        alter_subtrees(tn.get_right(tnode), left_tree_offset, right_tree_offset, root_offset + right_tree_offset)
+        return
 ###############################################################################
 
 my_tree = tn.create(10, tn.create(5), tn.create(15))
 
 print(my_tree)
-print('result', collect_data_inorder(my_tree))
+print('result', alter_subtrees(my_tree, 1, -1))
