@@ -206,7 +206,7 @@ for t in test_copy:
                 'the same --', t['reason'])
 
 #####################################################################
-# test a8q1.collect_data_inorder
+# test a8q1.collect_data_inorder()
 # Unit testing
 
 # Trees for testing
@@ -300,7 +300,7 @@ for t in test_collect_data_inorder:
 
 #####################################################################
 # test a8q1.alter_subtrees
-# Unit testing
+# Integration testing with a8q1.collect_data_inorder()
 
 # Trees for testing
 empty_tree = None
@@ -340,24 +340,24 @@ only_zeros_tree = tn.create(0,
 
 
 test_alter_subtrees = [
-    {'inputs' : [empty_tree],
+    {'inputs' : [empty_tree, 1, 1, 0],
      'outputs': [[]],
      'reason' : 'empty tree'
      },
-    {'inputs' : [single_tree],
-     'outputs': [[1776]],
+    {'inputs' : [single_tree, 2, 2, 4],
+     'outputs': [[1780]],
      'reason' : 'single tree'
      },
-    {'inputs' : [example_tree],
-     'outputs': [[1, 2, 3, 4, 5, 6, 7, 8, 9, 3, 1, 3]],
+    {'inputs' : [example_tree, 1, 1, 1],
+     'outputs': [[3, 7, 7 ,7, 6, 11, 11, 11, 11, 7, 4, 7]],
      'reason' : 'example tree'
      },
-     {'inputs' : [fibona_tree],
-     'outputs': [[1, 2, 0, 1, 1, 5, 0, 1 ,1, 3, 1 ,2 ,0 , 1, 1]],
+     {'inputs' : [fibona_tree, -1, -1, 2],
+     'outputs': [[1, 3, -1, 1, 0, 7, -1, 1, 0, 4, 0, 2, -2, 0, -1]],
      'reason' : 'fibonachi tree'
      },
-     {'inputs' : [only_zeros_tree],
-     'outputs': [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]],
+     {'inputs' : [only_zeros_tree, -1, 1, 0],
+     'outputs': [[-3, -2, -1, -1, -1, 0, 1, 0, -1, 0, 1, 1, 1, 2, 3]],
      'reason' : 'Only zeros tree'
      },
 ]
@@ -367,8 +367,10 @@ for t in test_alter_subtrees:
     expected = t['outputs']
 
     #get result from alter_subtrees()
-    result = a8q1.alter_subtrees(args_in[0])
+    altered_tree = a8q1.alter_subtrees(args_in[0], args_in[1], args_in[2], args_in[3])
 
+    #get inorder values of altered tree
+    result = a8q1.collect_data_inorder(altered_tree)
 
     if result != expected[0]:
         print('Error in alter_subtrees(): expected', expected[0],
