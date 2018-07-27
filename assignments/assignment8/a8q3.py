@@ -9,6 +9,17 @@ import treenode as tn
 import treefunctions as tf
 
 def cmplt(tnode):
+    """
+    Purpose:
+        Checks if tnode is complete: a binary tree that has exactly two children for every node, except for nodes at
+        the maximum level, where the nodes are barren
+    Pre-conditions:
+        :param tnode: a treenode
+    Post-conditions:
+        None
+    Return:
+        True if the tnode is complete, false otherwise
+    """
     def int_cmplt(tnode):
         if tnode is None:
             return (True, 0)
