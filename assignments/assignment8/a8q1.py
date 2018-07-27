@@ -13,6 +13,9 @@ def count_node_types(tnode):
     Purpose:
         Returns a tuple containing the number of leaf nodes in the tree,
         and the number of non-leaf nodes in the tree.
+    Pre-conditions:
+        :param tnode: a treenode
+    return: a tuple (number of leaf nodes, number of non-leaf nodes)
     """
     if tnode is None:
         return 0,0
@@ -31,7 +34,13 @@ def count_node_types(tnode):
 def copy(tnode):
     """
     Purpose: To create an exact copy of the given tree, with completely new
-    treenodes, but exactly the same data values, in exactly the same places
+        treenodes, but exactly the same data values, in exactly the same places
+    Pre-conditions:
+        :param tnode: a treenode
+    Post-conditions:
+        None
+    return:
+        A copy of tnode
     """
     if tnode is None:
         return None
@@ -45,8 +54,14 @@ def copy(tnode):
 def collect_data_inorder(tnode):
     """
     Purpose: To collect all the data values in the given tree. Returns a list
-    of all the data values, and the data values appear in the list according to
-    the in-order sequence.
+        of all the data values, and the data values appear in the list according to
+        the in-order sequence.
+    Pre-conditions:
+        :param tnode: a treenode
+    Post-conditions:
+        None
+    Return:
+        a list of all the values in tnode in inorder sequence
     """
 
     if tnode is None:
@@ -59,37 +74,20 @@ def alter_subtrees(tnode, left_tree_offset, right_tree_offset, root_offset=0):
     """
     Purpose: Adds the given offsets to the data values of each subtree
              (and current root).
+    Pre-conditions:
+        :param tnode: a treenode
+    Post-conditions:
+        tnode is altered according to the offset arguments
+    Return:
+        the altered tnode
     """
+
+
     if tnode is None:
-        return
+        return tnode
     else:
         cur_val = tn.get_data(tnode)
         tn.set_data(tnode, cur_val + root_offset)
         alter_subtrees(tn.get_left(tnode), left_tree_offset, right_tree_offset, root_offset + left_tree_offset)
         alter_subtrees(tn.get_right(tnode), left_tree_offset, right_tree_offset, root_offset + right_tree_offset)
-        return
-
-
-###############################################################################
-if __name__ == '__main__':
-    expr_tree = extree.fibonatree
-    fibTree = extree.fibonatree
-    my_tree = tn.create(0,
-                tn.create(0,
-                    tn.create(0,
-                        tn.create(0),
-                        tn.create(0)),
-                    tn.create(0,
-                        tn.create(0),
-                        tn.create(0))),
-                tn.create(0,
-                    tn.create(0,
-                        tn.create(0),
-                        tn.create(0)),
-                    tn.create(0,
-                        tn.create(0),
-                        tn.create(0))))
-
-    muh_tree = tn.create(1)
-    print(tf.to_string(expr_tree))
-    print(count_node_types(expr_tree))
+        return tnode
